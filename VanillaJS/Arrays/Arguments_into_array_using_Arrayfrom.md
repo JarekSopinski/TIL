@@ -1,4 +1,4 @@
-# How to put all arguments into single array?
+## How to put all arguments into single array?
 
 Tools: 
 
@@ -8,11 +8,15 @@ Tools:
 
 (Optional: spread operator)
 
->foo () => {	
->	const argsArray = Array.from(arguments);
->	// Alternative way with spread operator:
->	const argsArray2 = [...arguments];
->	}
+	foo () => {	
+
+		const argsArray = Array.from(arguments);
+
+		// Alternative way with spread operator:
+
+		const argsArray2 = [...arguments];
+
+		}
 
 
 

@@ -1,4 +1,4 @@
-# How to break an array into subarrays with equal length?
+## How to break an array into subarrays with equal length?
 
 	function breakArray(array, chunkLenght) {
 	
@@ -15,4 +15,4 @@
 	}
 	
 
-breakArray([1,2,3,4,5,6], 2) // [ [1,2], [3,4], [5,6] ]
+	breakArray([1,2,3,4,5,6], 2) // returns: [ [1,2], [3,4], [5,6] ]

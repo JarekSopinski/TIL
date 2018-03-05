@@ -1,24 +1,24 @@
-# How to run tests using Yarn
+## How to run tests using Yarn
 
-## Example:
+### Example:
 
-//sum.js
+	//sum.js
 
-export default (a, b) => (a + b)
+	export default (a, b) => (a + b)
 
-//sum.test.js
+	//sum.test.js
 
-import sum from './sum'
+	import sum from './sum'
 
-test ('Exprect sum to sum numbers', () => {
-    expect(sum(1,2)).toBe(3)
-    expect(sum(0.1, 0.2)).toBe(0.3)
-})
+	test ('Exprect sum to sum numbers', () => {
+	    expect(sum(1,2)).toBe(3)
+	    expect(sum(0.1, 0.2)).toBe(0.3)
+	})
 
-## Commands
+### Commands
 
 // To run test using yarn type 'yarn test' in console
 
-'yarn test --coverage' returns raports (exported to newly created catalog 'coverage')
+	'yarn test --coverage' returns raports (exported to newly created catalog 'coverage')
 
 
