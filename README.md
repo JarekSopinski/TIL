@@ -8,13 +8,15 @@ _17 TILs and grows..._
 
 #### Categories:
 
-* [JavaScript](https://github.com/JarekSopinski/TIL/tree/master/JavaScript)
-⋅⋅* [JavaScript: Objects](https://github.com/JarekSopinski/TIL/tree/master/JavaScript/Objects)
-⋅⋅* [JavaScript: Arrays](https://github.com/JarekSopinski/TIL/tree/master/JavaScript/Arrays)
-⋅⋅* [JavaScript: Useful functions](https://github.com/JarekSopinski/TIL/tree/master/JavaScript/Useful_functions)
-⋅⋅* [JavaScript: Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/JavaScript/Misc)
-* [React and Redux](https://github.com/JarekSopinski/TIL/tree/master/React%26Redux)
-* [Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/Misc)
+1. [JavaScript](https://github.com/JarekSopinski/TIL/tree/master/JavaScript)
+
+* [Objects](https://github.com/JarekSopinski/TIL/tree/master/JavaScript/Objects)
+* [Arrays](https://github.com/JarekSopinski/TIL/tree/master/JavaScript/Arrays)
+* [Useful functions](https://github.com/JarekSopinski/TIL/tree/master/JavaScript/Useful_functions)
+* [Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/JavaScript/Misc)
+
+2. [React and Redux](https://github.com/JarekSopinski/TIL/tree/master/React%26Redux)
+3. [Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/Misc)
 
 ---
 
