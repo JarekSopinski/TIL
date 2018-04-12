@@ -9,20 +9,37 @@ Geolocation.getCurrentPosition() method returns current position of user's devic
 
 The browser will ask user for an agreement to show geolocation data (for privacy reasons).
 
-Below is an example of using this method, including error handling:
+Below is an example of asynchronously running this method, including error handling:
 
-	let userLatitude;
-	let userLongitude;
-	// in case of success, user's coordinates will be passed to above variables
+	const userLocation = {}
+	// in case of success, user's coordinates will be passed to above object
 
-	function getUserLocation() {
+	const runBrowserGeolocation = () => {
 
-	    const geolocationSuccess = (location) => {
-		userLatitude = location.coords.latitude;
-		userLongitude = location.coords.longitude;
-	    };
+	    	return new Promise((resolve, reject) => {
+		navigator.geolocation.getCurrentPosition(resolve, reject);
+	    	})
 
-	    const geolocationError = (error) => {
+	};
+
+	const getUserLocation = () => {
+
+	    runBrowserGeolocation()
+		.then(data => passDataToUserLocationObject(data))
+		.then(userLocation => doSomethingElseWithData(userLocation))
+		.catch(error => handleError(error))
+
+	};
+
+	const passDataToUserLocationObject = (data) => {
+
+	    userLocation.latitude = data.coords.latitude;
+	    userLocation.longitude = data.coords.longitude;
+	    return userLocation
+
+	};
+
+	    const handleError = (error) => {
 		switch(error.code) {
 		    case error.PERMISSION_DENIED:
 		        alert("This app requires your coordinates to run. Please allow geolocation in your browser.");
@@ -39,10 +56,4 @@ Below is an example of using this method, including error handling:
 		}
 	    };
 
-	    navigator.geolocation ?
-		navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError)
-		:
-		alert("Your browser doesn't support geolocation")
-	}
-
-
+	window.addEventListener("load", getUserLocation);

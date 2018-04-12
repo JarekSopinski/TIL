@@ -2,7 +2,7 @@
 
 Let's consider following example:
 
-	const city = { name: "Gdansk", age: "1000", population: "500000" }
+	const city = { name: "Gdansk", age: 1000, population: 500000 }
 
 If we want to pass each value to a new variable, the classic way would be:
 
@@ -17,8 +17,8 @@ But if we use destructuring:
 And now our new variables will hold each key's value:
 	
 	cityName // "Gdansk"
-	cityAge // "1000"
-	cityPopulation // "500000"
+	cityAge // 1000
+	cityPopulation // 500000
 
 We can simplify this by giving variables the same names as keys' names:
 
@@ -27,5 +27,5 @@ We can simplify this by giving variables the same names as keys' names:
 And now our new variables will hold each key's value:
 
 	name // "Gdansk"
-	age // "1000"
-	population // "500000"
+	age // 1000
+	population // 500000
