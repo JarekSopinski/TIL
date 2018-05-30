@@ -1,6 +1,6 @@
 ### Currying
 
-Currying in a technique of translating the evaluation of a function that takes multiple arguments (or a tuple of arguments) into evaluating a sequence of functions, each with a single argument. (Wikipedia)[https://en.wikipedia.org/wiki/Currying]
+Currying in a technique of translating the evaluation of a function that takes multiple arguments (or a tuple of arguments) into evaluating a sequence of functions, each with a single argument. [(Wikipedia)](https://en.wikipedia.org/wiki/Currying)
 
 For example, using traditional JS function syntax:
 
