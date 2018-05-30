@@ -2,7 +2,7 @@
 
 > This is my own coding notebook: various tools, tricks and solutions for various problems I encountered. I create these notes mostly for my future self, but if you'll find it useful, I'll be very glad!
 
-_17 TILs and grows..._
+_22 TILs and grows..._
 
 ---
 
@@ -16,7 +16,8 @@ _17 TILs and grows..._
 * [Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/JavaScript/Misc)
 
 2. [React and Redux](https://github.com/JarekSopinski/TIL/tree/master/React%26Redux)
-3. [Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/Misc)
+3. [CSS](https://github.com/JarekSopinski/TIL/tree/master/CSS)
+4. [Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/Misc)
 
 ---
 
@@ -34,18 +35,28 @@ _17 TILs and grows..._
 - [Flatten a nested array](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Arrays/Flatten_a_nested_array.md)
 - [Remove repeated values from an array](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Arrays/Remove_repeated_values_from_array.md)
 - [Spread operator](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Arrays/Spread_operator.md)
+- [Search for indexes with findIndex() and indexOf()](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Arrays/Search_for_indexes_with_findIndex_and_indexOf.md)
 
 #### JavaScript / Useful functions
 - [Convert RGB to HEX](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Useful_functions/Convert_RGB_to_HEX.md)
 - [Get a random number in a range](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Useful_functions/Get_Random_Number_In_A_Range.md)
+- [Get object's key by a value](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Useful_functions/Get_key_by_value.md)
 
 #### JavaScript / Miscellaneous
 - [Get user's location with HTML5 Geolocation API](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Misc/Get_User_Location_Using_HTML5_Geolocation_API.md)
 - [Simplify choosing between booleans](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Misc/Simplify_choosing_between_booleans.md)
+- [Currying](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Misc/Currying.md)
 
 #### React and Redux
 - [Eeasily toggle element's visibility](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Easily_toggle_elements_visibility.md)
 - [Redux devtools setup](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Redux_DevTools_Setup.md)
+
+
+#### CSS / Saas
+- [Mixins](https://github.com/JarekSopinski/TIL/blob/master/CSS/Sass/Mixins.md)
+
+#### CSS / Miscellaneous
+- [BEM naming convention](https://github.com/JarekSopinski/TIL/blob/master/CSS/Misc/BEM_naming_convention.md)
 
 #### Miscellaneous
 - [Running tests with Yarn](https://github.com/JarekSopinski/TIL/blob/master/Misc/running-tests-with-yarn.md)
