@@ -1,3 +1,5 @@
+## ES6 Classes
+
 Classes were introduced in ES6 and they're basiclly a "sugar syntax" for prototypes.
 
 A new class is declared with a "class" keyword. Its name should start with a capital letter:
