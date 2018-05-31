@@ -2,7 +2,7 @@
 
 > This is my own coding notebook: various tools, tricks and solutions for various problems I encountered. I create these notes mostly for my future self, but if you'll find it useful, I'll be very glad!
 
-_22 TILs and grows..._
+_24 TILs and grows..._
 
 ---
 
@@ -25,6 +25,8 @@ _22 TILs and grows..._
 - [Copy an object without references](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Objects/Copy_an_object_without_references.md)
 - [Destructuring](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Objects/Destructuring_of_objects.md)
 - [Bind](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Objects/Bind.md)
+- [Classes](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Objects/Classes.md)
+- [Constructors and prototypes](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Objects/Constructors_and_Prototypes.md)
 
 
 #### JavaScript / Arrays
