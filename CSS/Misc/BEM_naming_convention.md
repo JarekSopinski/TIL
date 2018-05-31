@@ -14,15 +14,15 @@ The primary idea behind BEM is that we have to think about CSS code as a set of 
 ### Classes categories
 
 1. Blocks: main, first-level classes. They are equal, independent and reusable. Examples: ".container", ".main-menu".
-2. Elements: classes that are semantically tied to blocks. They define elements within block and have no standalone meaning. Element's name is built by addind its name to a block's name and separating it with two underscores (__). Examples: ".container__item", ".main-menu__fancy-button".
-3. Modifiers: they are semantically tied to blocks or elements and can modify their appearance, behavior or state. Modifier's name is built by addind its name to a block's or element's name and separating it with two dashes (--). Examples: "container__item--visible", ".main-menu__fancy-button--red".
+2. Elements: classes that are semantically tied to blocks. They define elements within block and have no standalone meaning. Element's name is built by adding its name to a block's name and separating it with two underscores (__). Examples: ".container__item", ".main-menu__fancy-button".
+3. Modifiers: they are semantically tied to blocks or elements and can modify their appearance, behavior or state. Modifier's name is built by adding its name to a block's or element's name and separating it with two dashes (--). Examples: "container__item--visible", ".main-menu__fancy-button--red".
 
 ### Example
 
 	<div class="container">
 		<button class="container__button"></button>
-		<button class="container__button button--red"></button>
-		<button class="container__button button--black"></button>
+		<button class="container__button container__button--red"></button>
+		<button class="container__button container__button--black"></button>
 	</div>
 
 ### Notes
