@@ -17,7 +17,8 @@ _24 TILs and grows..._
 
 2. [React and Redux](https://github.com/JarekSopinski/TIL/tree/master/React%26Redux)
 3. [CSS](https://github.com/JarekSopinski/TIL/tree/master/CSS)
-4. [Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/Misc)
+4. [WordPress](https://github.com/JarekSopinski/TIL/tree/master/WordPress)
+5. [Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/Misc)
 
 ---
 
@@ -59,6 +60,10 @@ _24 TILs and grows..._
 
 #### CSS / Miscellaneous
 - [BEM naming convention](https://github.com/JarekSopinski/TIL/blob/master/CSS/Misc/BEM_naming_convention.md)
+
+#### WordPress
+
+- [Permalink structure](https://github.com/JarekSopinski/TIL/blob/master/WordPress/permalink-struture.md)
 
 #### Miscellaneous
 - [Running tests with Yarn](https://github.com/JarekSopinski/TIL/blob/master/Misc/running-tests-with-yarn.md)
