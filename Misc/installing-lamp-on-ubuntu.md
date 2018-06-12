@@ -28,6 +28,8 @@ In nano, type a basic php line:
 
 Then ctrl-x, enter. Open localhost/test.php (or youripadress/test.php) in a browser.
 
+### mySQL
+
 Install mySQL:
 
 	sudo apt-get install mysql-server
@@ -42,6 +44,8 @@ You can now enter mySQL by typing:
 	create database testdb;
 	show databases;
 	exit;
+	
+### phpMyAdmin
 
 Install phpMyAdmin:
 
@@ -80,17 +84,33 @@ Or:
 
 Enter root as a user and type previously created password.
 
-var/www/html is a directory where you can put files displayed from your server. You can find default Apache file there (the one that was used previously in testing).
-
-Here's a list of basic Apache2 commands:
-
-Start: sudo /etc/init.d/apache2 start 
-Restart: sudo /etc/init.d/apache2 restart
-Stop: sudo /etc/init.d/apache2 stop 
-Check status: sudo /etc/init.d/apache2 status
 
 This guide is based on a YouTube tutorial: 
 https://www.youtube.com/watch?v=vazRx1Ei8VA
+
+### Additional notes
+
+var/www/html is a directory where you can put files displayed from your server. You can find default Apache file there (the one that was used previously in testing). By default this folder will be read only, but you can permissions by typing:
+
+	sudo chmod 766 -R /var/www/html
+	
+This will assign full permissions 7 for the owner, read/write 6 for the group, and read/write for everyone 6, recursively.
+
+
+### Basic Apache2 commands:
+
+Start: 
+
+	sudo /etc/init.d/apache2 start 
+Restart: 
+
+	sudo /etc/init.d/apache2 restart
+Stop: 
+
+	sudo /etc/init.d/apache2 stop 
+Check status:
+
+	sudo /etc/init.d/apache2 status
 
 	
 
