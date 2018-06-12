@@ -62,6 +62,7 @@ _24 TILs and grows..._
 
 #### Miscellaneous
 - [Running tests with Yarn](https://github.com/JarekSopinski/TIL/blob/master/Misc/running-tests-with-yarn.md)
+- [Install LAMP on Ubuntu](https://github.com/JarekSopinski/TIL/blob/master/Misc/installing-lamp-on-ubuntu.md)
 
 ---
 
