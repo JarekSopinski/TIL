@@ -26,7 +26,7 @@ In nano, type a basic php line:
 	echo "It works"; 
 	?>
 
-Than ctrl-x, enter. Open localhost/test.php (or youripadress/test.php) in a browser.
+Then ctrl-x, enter. Open localhost/test.php (or youripadress/test.php) in a browser.
 
 Install mySQL:
 
@@ -80,10 +80,8 @@ Or:
 
 Enter root as a user and type previously created password.
 
-///////////////////////////////////////////////
 This guide is based on a YouTube tutorial: 
 https://www.youtube.com/watch?v=vazRx1Ei8VA
-//////////////////////////////////////////////
 
 	
 
