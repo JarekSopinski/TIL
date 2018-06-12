@@ -80,6 +80,15 @@ Or:
 
 Enter root as a user and type previously created password.
 
+var/www/html is a directory where you can put files displayed from your server. You can find default Apache file there (the one that was used previously in testing).
+
+Here's a list of basic Apache2 commands:
+
+Start: sudo /etc/init.d/apache2 start 
+Restart: sudo /etc/init.d/apache2 restart
+Stop: sudo /etc/init.d/apache2 stop 
+Check status: sudo /etc/init.d/apache2 status
+
 This guide is based on a YouTube tutorial: 
 https://www.youtube.com/watch?v=vazRx1Ei8VA
 
