@@ -2,7 +2,7 @@
 
 > This is my own coding notebook: various tools, tricks and solutions for various problems I encountered. I create these notes mostly for my future self, but if you'll find it useful, I'll be very glad!
 
-_24 TILs and grows..._
+_28 TILs and grows..._
 
 ---
 
@@ -16,8 +16,14 @@ _24 TILs and grows..._
 * [Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/JavaScript/Misc)
 
 2. [React and Redux](https://github.com/JarekSopinski/TIL/tree/master/React%26Redux)
+
 3. [CSS](https://github.com/JarekSopinski/TIL/tree/master/CSS)
+
+* [Saas](https://github.com/JarekSopinski/TIL/tree/master/CSS/Sass)
+* [Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/CSS/Misc)
+
 4. [WordPress](https://github.com/JarekSopinski/TIL/tree/master/WordPress)
+
 5. [Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/Misc)
 
 ---
@@ -64,6 +70,8 @@ _24 TILs and grows..._
 #### WordPress
 
 - [Permalink structure](https://github.com/JarekSopinski/TIL/blob/master/WordPress/permalink-struture.md)
+- [Create a new theme](https://github.com/JarekSopinski/TIL/blob/master/WordPress/create-new-theme.md)
+- [The loop - iterating through posts](https://github.com/JarekSopinski/TIL/blob/master/WordPress/the-loop.md)
 
 #### Miscellaneous
 - [Running tests with Yarn](https://github.com/JarekSopinski/TIL/blob/master/Misc/running-tests-with-yarn.md)
