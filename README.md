@@ -2,7 +2,7 @@
 
 > This is my own coding notebook: various tools, tricks and solutions for various problems I encountered. I create these notes mostly for my future self, but if you'll find it useful, I'll be very glad!
 
-_35 TILs and grows..._
+_37 TILs and grows..._
 
 ---
 
@@ -74,6 +74,7 @@ _35 TILs and grows..._
 - [Mixins](https://github.com/JarekSopinski/TIL/blob/master/CSS/Sass/Mixins.md)
 - [BEM naming convention](https://github.com/JarekSopinski/TIL/blob/master/CSS/Misc/BEM_naming_convention.md)
 - [Flexbox guide](https://github.com/JarekSopinski/TIL/blob/master/CSS/Flexbox-guide.md)
+- [CSS Grid guide](https://github.com/JarekSopinski/TIL/blob/master/CSS/css_grid_guide.md)
 
 #### WordPress
 
