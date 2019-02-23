@@ -73,6 +73,7 @@ _35 TILs and grows..._
 #### CSS
 - [Mixins](https://github.com/JarekSopinski/TIL/blob/master/CSS/Sass/Mixins.md)
 - [BEM naming convention](https://github.com/JarekSopinski/TIL/blob/master/CSS/Misc/BEM_naming_convention.md)
+- [Flexbox guid](https://github.com/JarekSopinski/TIL/blob/master/CSS/Flexbox-guide.md)
 
 #### WordPress
 
