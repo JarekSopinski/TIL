@@ -75,6 +75,7 @@ _37 TILs and grows..._
 - [BEM naming convention](https://github.com/JarekSopinski/TIL/blob/master/CSS/Misc/BEM_naming_convention.md)
 - [Flexbox guide](https://github.com/JarekSopinski/TIL/blob/master/CSS/Flexbox-guide.md)
 - [CSS Grid guide](https://github.com/JarekSopinski/TIL/blob/master/CSS/css_grid_guide.md)
+- [CSS Animations guide](https://github.com/JarekSopinski/TIL/blob/master/CSS/css-animations.md)
 
 #### WordPress
 
