@@ -85,7 +85,6 @@ _37 TILs and grows..._
 - [Get template directory](https://github.com/JarekSopinski/TIL/blob/master/WordPress/get-template-directory.md)
 
 #### Miscellaneous
-- [Running tests with Yarn](https://github.com/JarekSopinski/TIL/blob/master/Misc/running-tests-with-yarn.md)
 - [Install LAMP on Ubuntu](https://github.com/JarekSopinski/TIL/blob/master/Misc/installing-lamp-on-ubuntu.md)
 
 ---

@@ -90,11 +90,7 @@ https://www.youtube.com/watch?v=vazRx1Ei8VA
 
 ### Additional notes
 
-var/www/html is a directory where you can put files displayed from your server. You can find default Apache file there (the one that was used previously in testing). By default this folder will be read only, but you can permissions by typing:
-
-	sudo chmod 766 -R /var/www/html
-	
-This will assign full permissions 7 for the owner, read/write 6 for the group, and read/write for everyone 6, recursively.
+var/www/html is a directory where you can put files displayed from your server. You can find default Apache file there (the one that was used previously in testing). By default this folder will be read only.
 
 
 ### Basic Apache2 commands:
@@ -111,14 +107,3 @@ Stop:
 Check status:
 
 	sudo /etc/init.d/apache2 status
-
-	
-
-
-
-
-
-
-
-
-	
