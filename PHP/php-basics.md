@@ -54,3 +54,13 @@ str_replace() function replaces every character in a string with another. It tak
 
     $name = "jarek";
     echo str_replace('j', 'm', $name); // echoes: marek
+
+### Numbers
+
+Number can be an integer (i.e. 25) or a float (i.e. 3.14). PHP provides basic math operations: +,-,*,/,**. They are performed in BODMAS order (bracets, orders, division, multiplication, adding, subtracting). We can use shorthand operators (+=, -=, *=). We can also increment (++) and decrement (--).
+
+floor() function floors a float to a nearest integer. ceil() takes it up to a nearest integer.
+
+    $pi = 3.14;
+    echo floor($pi); // echoes 3
+    echo ceil ($pi); // echoes 4
