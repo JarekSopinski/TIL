@@ -2,7 +2,7 @@
 
 ### Variables
 
-Variables are declared with $ sign. A variable name must start with a letter (lowercased or uppercased) or underscore, but now with a number or a special character.
+Variables are declared with $ sign. A variable name must start with a letter (lowercased or uppercased) or underscore, but not with a number or a special character.
 
     $foo;
     $_foo_bar;
@@ -34,3 +34,23 @@ To prevent escaping characters, we can use backslash before that character:
 
     echo "I said "stop!" with a loud voice"; // error
     echo "I said \"stop!\" with a loud voice"; // echoes: I said "stop!" with a loud voice
+
+We can gain access to a sign inside a variable by providing its index (counted from 0):
+
+    $name = 'jarek';
+    echo $name[0]; // echoes: j
+
+strlen() function returns the length of a string:
+
+    $name = 'jarek';
+    echo strlen($name); // echoes: 5
+
+strtoupper() function returns uppercased string. strtolower() does the opposite.
+
+    $name = 'jarek';
+    echo strtoupper($name); // echoes: JAREK
+
+str_replace() function replaces every character in a string with another. It takes 3 arguments: 1) replaced character 2) new character 3) string variable.
+
+    $name = "jarek";
+    echo str_replace('j', 'm', $name); // echoes: marek
