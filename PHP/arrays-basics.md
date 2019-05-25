@@ -29,3 +29,22 @@ array_merge() merges arrays in an order of arguments:
     $colors = ['red', 'blue', 'green'];
     $animals = array('lion', 'dog', 'cat');
     $colors_and_animals = array_merge($colors, $animals);
+
+### Associative arrays
+
+Associative arrays are key-value pairs. We can gain access to each value by providing its key.
+
+    $jedi = ['yoda' => 'master', 'kenobi' => 'knight', 'anakin' => 'padawan'];
+    echo $jedi['yoda']; // echoes 'master';
+
+We can add new value like this:
+
+    $jedi['mace windu'] = 'master'; // $jedi = ['yoda' => 'master', 'kenobi' => 'knight', 'anakin' => 'padawan', 'mace windu' => 'master'];
+
+A value can be overwritten:
+
+    $jedi['kenobi'] = 'master';
+
+Associative arrays can be counted and merged the same as indexed arrays:
+
+    count($jedi); // 4
