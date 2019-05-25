@@ -79,7 +79,8 @@ _37 TILs and grows..._
 
 #### PHP
 
-- [PHP Basics](https://github.com/JarekSopinski/TIL/blob/master/PHP/php-basics.md)
+- [PHP basics](https://github.com/JarekSopinski/TIL/blob/master/PHP/php-basics.md)
+- [Arrays basics](https://github.com/JarekSopinski/TIL/blob/master/PHP/arrays-basics.md)
 
 #### WordPress
 
