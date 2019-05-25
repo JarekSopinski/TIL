@@ -80,3 +80,27 @@ Multidimensional arrays can also be associative:
 New nested array can be inserted like this:
 
     $books[] = ['title' => 'name of the wind', 'author' => 'patrick rothfuss', length => 600];
+
+### Loops
+
+Here's and example of a for loop, with number of iterations equal to a length of an array:
+
+    $blogs = ['blog1', 'blog2', 'blog3', 'blog4', ...];
+
+    for ($i = 0; $i<count($blogs); $i++) {
+        echo $blog[$i];
+    };
+
+Here's an example of a foreach loop:
+
+    foreach ($blogs as $blog) {
+        echo $blog;
+    };
+
+And an example of a while loop:
+
+    $i = 0;
+    while ($i < count($blogs)) {
+        echo $blogs[$i];
+        $i++;
+    }
