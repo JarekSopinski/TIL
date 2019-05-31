@@ -91,3 +91,66 @@ A function can return a value, which can be stored inside a variable:
     };
 
     $sum = addNums(2,3);
+
+### Scope
+
+A variable can have a local scope or a global scope.
+
+For example, variables declared inside functions have local scope:
+
+    function myFunc() {
+        $num = 10; // local scope
+        echo $num;
+    };
+
+    myFunc(); // echoes 10
+    echo $num; // nothing, can't access a variable
+
+Parameters also have local scope:
+
+    function myFunc($num = 10) {
+        echo $num;
+    };
+
+    myFunc(); // echoes 10
+    echo $num; // nothing, can't access a variable
+
+On the other hand, a function can't simply access a global variable:
+
+    $num = 10; // global scope
+    function myFunc() {
+        echo $num;
+    };
+    myFunc(); // nothing, can't access a variable
+
+If we want to use a global variable inside a function, we have to inform a function about it, by using a keyword 'global':
+
+    $num = 10; // global scope
+    function myFunc() {
+        global $num;
+        echo $num;
+    };
+    myFunc(); // echoes 10;
+
+Keep in mind that changing a value of a variable called by a 'global' keyword inside a function will also change the value outside (if the function is executed):
+
+    $name = 'John';
+    function changeName() {
+        global $name;
+        $name = 'Adam';
+    };
+
+    echo $name; // 'John' - value wasn't changed because function wasn't executed yet
+    changeName();
+    echo $name; // 'Adam'; - value was changed after the function was executed
+
+If we want to use a global as a parameter and than update its global value, we have to call it with an ampersand (&):
+
+    $name = 'John';
+    function changeName(&$name) {
+        $name = 'Adam';
+    };
+    changeName($name);
+    echo $name; // 'Adam' - global value was updated. 
+    
+If we didn't use & in the example above, we would still get 'John', because a value would updated only in a local scope.
