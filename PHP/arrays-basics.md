@@ -104,3 +104,24 @@ And an example of a while loop:
         echo $blogs[$i];
         $i++;
     }
+
+A loop can be exited using 'break' keyword.
+
+    $nums = [1,2,3,4];
+    foreach ($nums as $num) {
+        if ($num > 2) {
+            echo 'stop';
+            break; // loop will skip indexes 3 and 4
+        }
+    }
+
+A 'continue' keyword stops the execution of the rest of the code inside the loop (below that keyword), but doesn't stop the loop itself.
+
+    $nums = [1,2,3,4];
+    foreach ($nums as $num) {
+        if ($num > 2) {
+            echo 'foo';
+            continue;
+            echo 'bar'; // this line won't execute on indexes 3 and 4
+        }
+    }
