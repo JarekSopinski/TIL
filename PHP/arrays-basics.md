@@ -54,6 +54,10 @@ Associative arrays can be counted and merged the same as indexed arrays:
 
     count($jedi); // 4
 
+If we are calling an index from associative array and we want to put it inside a string, we have to use curly braces:
+
+    echo {"Product name is $product['name']"};
+
 ### Multidimensional array
 
 PHP arrays can be nested within other arrays like this:

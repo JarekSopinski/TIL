@@ -64,3 +64,30 @@ floor() function floors a float to a nearest integer. ceil() takes it up to a ne
     $pi = 3.14;
     echo floor($pi); // echoes 3
     echo ceil ($pi); // echoes 4
+
+### Functions
+
+PHP functions are declared and called like this:
+
+    function sayHello($name) {
+        echo "Good morning $name";
+    };
+
+    sayHello('John'); // echoes "Good morning John"
+
+Parameters can have default values. That way our code won't break if we won't provide an argument for this parameter. Of course, if an argument is provided, it will always overwrite the default value.
+
+    function sayHello($name = 'John') {
+        echo "Good morning $name";
+    };
+
+    sayHello(); // echoes "Good morning John"
+    sayHello('Adam'); // echoes "Good morning Adam".
+
+A function can return a value, which can be stored inside a variable:
+
+    function addNums($num1, $num2) {
+        return $num1 + $num2;
+    };
+
+    $sum = addNums(2,3);
