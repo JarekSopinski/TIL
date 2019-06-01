@@ -153,4 +153,16 @@ If we want to use a global as a parameter and than update its global value, we h
     changeName($name);
     echo $name; // 'Adam' - global value was updated. 
     
-If we didn't use & in the example above, we would still get 'John', because a value would updated only in a local scope.
+If we didn't use an ampersand (&) in the example above, we would still get 'John', because a value would be updated only in a local scope.
+
+### Include and require
+
+Include and require are PHP built-in functions which allow us to include a file into another file. The main difference is the fact, that require will cause fatal error if the file wasn't found, while include won't stop the rest of the code from being executed.
+
+    include('file.php');
+    require('file.php');
+
+Brackets can be omitted:
+
+    include 'file.php';
+    require 'file.php';
