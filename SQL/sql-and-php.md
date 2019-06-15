@@ -46,3 +46,13 @@ Than we write a query and, as in previous example, pass it to mysqli_query() fun
     $sql_query = "INSERT INTO books(title, author) VALUES('$title_esc', '$author_esc')";
 
     mysqli_query($conn, $sql_query);
+
+### Use MySQLi to select an item (row) by id:
+
+This is similar to fetching all items. The main difference is the fact that instead of using mysqli_fetch_all() function, we use mysqli_fetch_assoc() function. This function takes one argument, which is a query's result.
+
+    $conn = mysqli_connect($db_host, $db_user, $db_pass,  $db_name);
+    $sql_query = "SELECT * FROM books WHERE id = $id";
+
+    $result = mysqli_query($conn, $sql_query);
+    $result_assoc_arr = mysqli_fetch_assoc($result);
