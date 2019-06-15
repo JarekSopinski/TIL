@@ -55,6 +55,11 @@ str_replace() function replaces every character in a string with another. It tak
     $name = "jarek";
     echo str_replace('j', 'm', $name); // echoes: marek
 
+explode() function can be used to convert a string into an array:
+
+    $drinks = 'tea, cola, beer';
+    explode(',', $drinks); // Result: ['tea', 'cola', 'beer'];
+
 ### Numbers
 
 Number can be an integer (i.e. 25) or a float (i.e. 3.14). PHP provides basic math operations: +,-,*,/,**. They are performed in BODMAS order (bracets, orders, division, multiplication, adding, subtracting). We can use shorthand operators (+=, -=, *=). We can also increment (++) and decrement (--).
