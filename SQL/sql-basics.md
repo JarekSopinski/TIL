@@ -21,3 +21,7 @@ Select specific columns from 'books' table:
 Select specific columns from 'books' table and order them by date:
 
     'SELECT title, author, id FROM books ORDER BY date'
+
+Insert new row into 'books' table (php-based example):
+
+    "INSERT INTO books(title, author) VALUES('$title', '$author')"
