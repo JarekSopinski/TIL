@@ -31,3 +31,7 @@ Insert new row into 'books' table:
 Select specific book based on id:
 
     "SELECT * FROM books WHERE id = $id"
+
+Delete specific book based on id:
+
+    "DELETE FROM books WHERE id = $id_to_delete"
