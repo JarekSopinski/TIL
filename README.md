@@ -86,6 +86,7 @@ _37 TILs and grows..._
 #### SQL
 
 - [SQL basics](https://github.com/JarekSopinski/TIL/blob/master/SQL/sql-basics.md)
+- [SQL and PHP](https://github.com/JarekSopinski/TIL/blob/master/SQL/sql-and-php.md)
 
 #### WordPress
 
