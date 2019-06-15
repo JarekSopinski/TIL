@@ -83,6 +83,10 @@ _37 TILs and grows..._
 - [Arrays basics](https://github.com/JarekSopinski/TIL/blob/master/PHP/arrays-basics.md)
 - [Form validation](https://github.com/JarekSopinski/TIL/blob/master/PHP/forms-validation.md)
 
+#### SQL
+
+- [SQL basics](https://github.com/JarekSopinski/TIL/blob/master/SQL/sql-basics.md)
+
 #### WordPress
 
 - [Permalink structure](https://github.com/JarekSopinski/TIL/blob/master/WordPress/permalink-struture.md)
