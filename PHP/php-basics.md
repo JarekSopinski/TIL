@@ -155,6 +155,14 @@ If we want to use a global as a parameter and than update its global value, we h
     
 If we didn't use an ampersand (&) in the example above, we would still get 'John', because a value would be updated only in a local scope.
 
+Constants always have a global scope, so we don't have to use keyword 'global' to use them.
+
+    define ('NAME', 'Jarek');
+    function myFunc() {
+        echo NAME; // no need for 'global'
+    };
+    myFunc(); // echoes 'Jarek';
+
 ### Include and require
 
 Include and require are PHP built-in functions which allow us to include a file into another file. The main difference is the fact, that require will cause fatal error if the file wasn't found, while include won't stop the rest of the code from being executed.
