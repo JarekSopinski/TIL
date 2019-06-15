@@ -17,3 +17,7 @@ Select all columns from 'books' table:
 Select specific columns from 'books' table:
 
     'SELECT title, author, id FROM books'
+
+Select specific columns from 'books' table and order them by date:
+
+    'SELECT title, author, id FROM books ORDER BY date'
