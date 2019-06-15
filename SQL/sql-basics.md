@@ -7,3 +7,13 @@ A database can contain several different tables, which stores a specific type ('
 Each table is made of rows and columns. A row represents an individual record in a table. A column represents a property on that record.
 
 A column expects a specific type of data, i.e. an integer or a string.
+
+### Basic queries examples
+
+Select all columns from 'books' table:
+
+    'SELECT * FROM books'
+
+Select specific columns from 'books' table:
+
+    'SELECT title, author, id FROM books'
