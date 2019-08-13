@@ -179,3 +179,11 @@ Brackets can be omitted:
 
     include 'file.php';
     require 'file.php';
+
+### Ternary operators
+
+PHP supports ternary operators, which are written like this:
+
+    $val = 50;
+    $res = $val > 40 ? 'high' : 'low';
+    echo $res;
