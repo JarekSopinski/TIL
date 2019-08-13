@@ -187,3 +187,17 @@ PHP supports ternary operators, which are written like this:
     $val = 50;
     $res = $val > 40 ? 'high' : 'low';
     echo $res;
+
+### Superglobals
+
+Superglobals are special variables, containing arrays with various data, which are available in PHP. They include:
+
+* $_GET - data from GET request
+* $_POST - data from POST request
+* $_SERVER - data about server, i.e. 
+    ⋅⋅* $_SERVER['name']
+    ⋅⋅* $_SERVER['REQUEST_METHOD'] 
+    ⋅⋅* $_SERVER['SCRIPT_FILENAME']
+    ⋅⋅* $_SERVER['PHP_SELF']
+* $_SESSION
+* $_COOKIE
