@@ -199,5 +199,26 @@ Superglobals are special variables, containing arrays with various data, which a
     ⋅⋅* $_SERVER['REQUEST_METHOD'] 
     ⋅⋅* $_SERVER['SCRIPT_FILENAME']
     ⋅⋅* $_SERVER['PHP_SELF']
-* $_SESSION
-* $_COOKIE
+    ..* $_SERVER['QUERY_STRING']
+* $_SESSION - explained below
+* $_COOKIE - explained below
+
+### Sessions
+
+A session superglobal ($_SESSION) can keep data between various pages (reloads), as long as a session lasts (until user leaves).
+Before it can be used, we have to call session_start() function.
+
+For example, if a user submited some data by a POST request, we can keep these data:
+
+    if ( isset($_POST['submit']) ) {
+        session_start();
+        $_SESSION['name'] = $_POST['name'];
+        header('Location: index.php');
+    }
+
+In this case, 'name' value will be still availabe after redirection to index.php.
+
+We can unset a single session variable or all of them:
+
+    unset($_SESSION['name']); // removes 'name'
+    session_unset; // removes all session variables
