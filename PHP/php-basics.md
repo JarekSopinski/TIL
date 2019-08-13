@@ -222,3 +222,10 @@ We can unset a single session variable or all of them:
 
     unset($_SESSION['name']); // removes 'name'
     session_unset; // removes all session variables
+
+### Null coalescing
+
+Using a double quotation mark, we can easily set a default backup value, that will prevent null errors:
+
+    $name = $_SESSION['name'] ?? 'Guest';
+    echo $name; // now in case of empty $_SESSION['name'] we won't get an error, but a backup value ('Guest') instead
