@@ -205,7 +205,7 @@ Superglobals are special variables, containing arrays with various data, which a
 
 ### Sessions
 
-A session superglobal ($_SESSION) can keep data between various pages (reloads), as long as a session lasts (until user leaves).
+A session superglobal ($_SESSION) can keep data on a server, between various pages (reloads), as long as a session lasts (until user leaves).
 Before it can be used, we have to call session_start() function.
 
 For example, if a user submited some data by a POST request, we can keep these data:
@@ -229,3 +229,13 @@ Using a double quotation mark, we can easily set a default backup value, that wi
 
     $name = $_SESSION['name'] ?? 'Guest';
     echo $name; // now in case of empty $_SESSION['name'] we won't get an error, but a backup value ('Guest') instead
+
+### Cookies
+
+While sessions are stored on a server, cookies are stored on a user's computer. A cookie is created using setcookie() function, which takes three arguments: cookie name, data and expire time.
+
+    setcookie('user_name', $_POST['user_name'], time() + 86400);
+
+Than we can get cookie's value using $_COOKIE superglobal with correct cookie name:
+
+    $user_name = $_COOKIE['user_name'] ?? 'Unknown';
