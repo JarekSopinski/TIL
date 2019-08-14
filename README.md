@@ -2,7 +2,7 @@
 
 > This is my own coding notebook: various tools, tricks and solutions for various problems I encountered. I create these notes mostly for my future self, but if you'll find it useful, I'll be very glad!
 
-_37 TILs and grows..._
+_38 TILs and grows..._
 
 ---
 
@@ -87,13 +87,6 @@ _37 TILs and grows..._
 
 - [SQL basics](https://github.com/JarekSopinski/TIL/blob/master/SQL/sql-basics.md)
 - [SQL and PHP](https://github.com/JarekSopinski/TIL/blob/master/SQL/sql-and-php.md)
-
-#### WordPress
-
-- [Permalink structure](https://github.com/JarekSopinski/TIL/blob/master/WordPress/permalink-struture.md)
-- [Create a new theme](https://github.com/JarekSopinski/TIL/blob/master/WordPress/create-new-theme.md)
-- [The loop - iterating through posts](https://github.com/JarekSopinski/TIL/blob/master/WordPress/the-loop.md)
-- [Get template directory](https://github.com/JarekSopinski/TIL/blob/master/WordPress/get-template-directory.md)
 
 #### Miscellaneous
 - [Install LAMP on Ubuntu](https://github.com/JarekSopinski/TIL/blob/master/Misc/installing-lamp-on-ubuntu.md)
