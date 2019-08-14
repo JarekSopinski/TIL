@@ -24,7 +24,7 @@ _38 TILs and grows..._
 * [Saas](https://github.com/JarekSopinski/TIL/tree/master/CSS/Sass)
 * [Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/CSS/Misc)
 
-5. [WordPress](https://github.com/JarekSopinski/TIL/tree/master/WordPress)
+5. [PHP](https://github.com/JarekSopinski/TIL/tree/master/PHP)
 
 6. [Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/Misc)
 
