@@ -58,3 +58,44 @@ And now we can access these values - notice that we don't use the dollar sign:
     echo $userOne->name;
     echo $userOne->email;
     $userOne->login(); // 'john logged in'
+
+### Getters and setters
+
+As mentioned above, class properties shouldn't be directly accessed and modified from outside of the class itself. Instead, they should be set to private. If we want to access or modify a private property, we have to use a getter or a setter function.
+
+    class User {
+
+        // private properties can't be accessed directly:
+        private $email;
+        private $name;
+
+        public function __construct(){
+            $this->email = $email;
+            $this->name = $name;
+        }
+
+        public function login(){
+            echo $this->name . ' logged in';
+        }
+
+        // a public getter function to get a name's value:
+        public function getName(){
+            return $this->name;
+        }
+
+        // a public setter function to set a name's value with a little validation:
+        public function setName($name){
+            if (is_string($name) && strlen($name > 1)){
+                $this->name = $name;
+                return "name has been updated to $name";
+            } else {
+                return "not a valid name";
+            }
+        }
+
+    }
+
+    $userOne = new User('john', 'john@gmail.com');
+    echo $userOne->setName(50); // "not a valid name";
+    echo $userOne->setName('jarek'); // "name has been updated to jarek"
+    echo $userOne->getName(); // "jarek"
