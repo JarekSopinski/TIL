@@ -83,6 +83,7 @@ _38 TILs and grows..._
 - [Arrays basics](https://github.com/JarekSopinski/TIL/blob/master/PHP/arrays-basics.md)
 - [Form validation](https://github.com/JarekSopinski/TIL/blob/master/PHP/forms-validation.md)
 - [File system](https://github.com/JarekSopinski/TIL/blob/master/PHP/file-system.md)
+- [Classes](https://github.com/JarekSopinski/TIL/blob/master/PHP/php-classes.md)
 
 #### SQL
 
