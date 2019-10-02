@@ -13,6 +13,7 @@ _38 TILs and grows..._
 * [Objects](https://github.com/JarekSopinski/TIL/tree/master/JavaScript/Objects)
 * [Arrays](https://github.com/JarekSopinski/TIL/tree/master/JavaScript/Arrays)
 * [Useful functions](https://github.com/JarekSopinski/TIL/tree/master/JavaScript/Useful_functions)
+* [TypeScript](https://github.com/JarekSopinski/TIL/tree/master/JavaScript/TypeScript)
 * [Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/JavaScript/Misc)
 
 2. [React and Redux](https://github.com/JarekSopinski/TIL/tree/master/React%26Redux)
@@ -52,6 +53,10 @@ _38 TILs and grows..._
 - [Convert RGB to HEX](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Useful_functions/Convert_RGB_to_HEX.md)
 - [Get a random number in a range](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Useful_functions/Get_Random_Number_In_A_Range.md)
 - [Get object's key by a value](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Useful_functions/Get_key_by_value.md)
+
+#### JavaScript / TypeScript
+- [Variables](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/TypeScript/Variables.md)
+- [Interfaces](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/TypeScript/Interfaces.md)
 
 #### JavaScript / Miscellaneous
 - [Get user's location with HTML5 Geolocation API](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Misc/Get_User_Location_Using_HTML5_Geolocation_API.md)
