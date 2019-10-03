@@ -57,6 +57,7 @@ _38 TILs and grows..._
 #### JavaScript / TypeScript
 - [Variables](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/TypeScript/Variables.md)
 - [Interfaces](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/TypeScript/Interfaces.md)
+- [Classes](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/TypeScript/Classes.md)
 
 #### JavaScript / Miscellaneous
 - [Get user's location with HTML5 Geolocation API](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Misc/Get_User_Location_Using_HTML5_Geolocation_API.md)
