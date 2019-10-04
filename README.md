@@ -16,18 +16,20 @@ _38 TILs and grows..._
 * [TypeScript](https://github.com/JarekSopinski/TIL/tree/master/JavaScript/TypeScript)
 * [Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/JavaScript/Misc)
 
-2. [React and Redux](https://github.com/JarekSopinski/TIL/tree/master/React%26Redux)
+2. [Angular](https://github.com/JarekSopinski/TIL/tree/master/Angular)
 
-3. [Node and Express](https://github.com/JarekSopinski/TIL/tree/master/Node%26Express)
+3. [React and Redux](https://github.com/JarekSopinski/TIL/tree/master/React%26Redux)
 
-4. [CSS](https://github.com/JarekSopinski/TIL/tree/master/CSS)
+4. [Node and Express](https://github.com/JarekSopinski/TIL/tree/master/Node%26Express)
+
+5. [CSS](https://github.com/JarekSopinski/TIL/tree/master/CSS)
 
 * [Saas](https://github.com/JarekSopinski/TIL/tree/master/CSS/Sass)
 * [Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/CSS/Misc)
 
-5. [PHP](https://github.com/JarekSopinski/TIL/tree/master/PHP)
+6. [PHP](https://github.com/JarekSopinski/TIL/tree/master/PHP)
 
-6. [Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/Misc)
+7. [Miscellaneous](https://github.com/JarekSopinski/TIL/tree/master/Misc)
 
 ---
 
@@ -63,6 +65,9 @@ _38 TILs and grows..._
 - [Get user's location with HTML5 Geolocation API](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Misc/Get_User_Location_Using_HTML5_Geolocation_API.md)
 - [Simplify choosing between booleans](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Misc/Simplify_choosing_between_booleans.md)
 - [Currying](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Misc/Currying.md)
+
+#### Angular
+- [Components](https://github.com/JarekSopinski/TIL/blob/master/Angular/Components.md)
 
 #### React and Redux
 - [Eeasily toggle element's visibility](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Easily_toggle_elements_visibility.md)
