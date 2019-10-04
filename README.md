@@ -68,6 +68,7 @@ _38 TILs and grows..._
 
 #### Angular
 - [Components](https://github.com/JarekSopinski/TIL/blob/master/Angular/Components.md)
+- [Directives](https://github.com/JarekSopinski/TIL/blob/master/Angular/Directives.md)
 
 #### React and Redux
 - [Eeasily toggle element's visibility](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Easily_toggle_elements_visibility.md)
