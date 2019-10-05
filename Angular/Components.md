@@ -29,3 +29,5 @@ In the module:
     })
 
 Of course, if we use "ng g c" command, we don't have to write the above code manually.
+
+An Angular component should not contain any logic other than the presentaion (view) logic. We should never run any http requests inside a component - [services](https://github.com/JarekSopinski/TIL/blob/master/Angular/Services.md) are responsible for that.
