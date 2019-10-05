@@ -1,6 +1,6 @@
 ## Angular components
 
-Each Angular application consits of modules, that can be resposible for larger functionalities (i.e. you can have an admin panel module). Modules are than divided into components, which are responsible views and logic of a certain code blocks.
+Each Angular application consits of modules, that can be resposible for larger functionalities (i.e. you can have an admin panel module). Modules are than divided into components, which are responsible for views and logic of a certain code blocks.
 
 Components can be created manually or generated using Angular CLI. In the second case, we use "ng g c foo" command, which stands for "ng generate component". In this example, "foo" is a component's name.
 
