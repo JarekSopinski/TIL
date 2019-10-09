@@ -31,3 +31,37 @@ In the module:
 Of course, if we use "ng g c" command, we don't have to write the above code manually.
 
 An Angular component should not contain any logic other than the presentaion (view) logic. We should never run any http requests inside a component - [services](https://github.com/JarekSopinski/TIL/blob/master/Angular/Services.md) are responsible for that.
+
+### Sending data to the view
+
+There are several ways for data to be displayed in a component's view (html template).
+
+#### String interpolation
+
+This referes to displaying data in double curly bracket, which is actually a "syntax sugar" for property binding - explained below.
+
+  <h1>{{ title }}</h1>
+
+#### Property binding
+
+A way of binding DOM properties to component's data, i.e.:
+
+  <img [src]="imageUrl" >
+
+#### Class binding
+
+A way of adding classes dynamicly, if a certain condition has been met:
+
+  <button class="btn btn-primary" [class.active]="isActive" >Save</button>
+
+  export class FooComponent {
+    isActive = true;
+  }
+
+In this case "active" class will be added only if isActive variable is truthy.
+
+#### Style binding
+
+A variation of property binding, used to dynamicly set the value of style property, i.e.:
+
+  <button [style.backgroundColor]="isActive ? 'blue' : 'white'"></button>
