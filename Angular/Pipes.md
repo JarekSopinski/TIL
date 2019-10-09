@@ -25,7 +25,7 @@ A single Pipe can have multiple arguments, each passed after a colon:
 
 Let's say that we want to create a Summary Pipe that will shorten a string by a certain numer of characters.
 
-First we have to create a file named summary.pipe.ts. This is Angular's naming convention for Pipe files. Inside this file we import the Pipe decorator function and PipeTransform - an interface that defined a shap of all Pipes in Angular:
+First we have to create a file named summary.pipe.ts. This is Angular's naming convention for Pipe files. Inside this file we import the Pipe decorator function and PipeTransform - an interface that defines a shape of all Pipes in Angular:
 
     import { Pipe, PipeTransform } from '@angular/core';
 
