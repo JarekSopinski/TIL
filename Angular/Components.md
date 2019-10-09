@@ -126,3 +126,39 @@ In Angular, instead of using an $event object, we can declare a variable that re
   onKeyUp(email) {
     console.log(email);
   }
+
+### Two-way data binding
+
+Two-way data binding is a way to simplify passing data in both ways. It eliminates the need for additional parameters, like in above examples. We can modify them like this:
+
+  <input [value]="email" (keyup.enter)="$event = $event.target.value; onKeyUp()" />
+
+  export class FooComponent {
+    email = 'me@example.com'; // initial value
+    
+    onKeyUp() {
+      console.log(this.email);
+    }
+  }
+
+Now, we first set email value, and than call onKeyUp() method. So this method will display value passed to the input. 
+
+#### Using ngModel
+
+Of course, the above code isn't very clean. We can use Angular's ngModel directive to implement two-way data binding in a more simple way:
+
+  <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
+
+Now we don't have to write additional code for setting the value, we only call onKeyUp() method.
+
+Of course, ngModel has to be imported from the Forms module. We add it  to imports in component's parent module @NgModule decorator:
+
+  import { FormsModule } from '@angular/forms';
+
+  @NgModule({
+    //...
+    imports: [
+      BrowserModule,
+      FormsModule
+    ]
+  })
