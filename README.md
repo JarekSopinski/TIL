@@ -69,6 +69,7 @@ _38 TILs and grows..._
 #### Angular
 - [Components](https://github.com/JarekSopinski/TIL/blob/master/Angular/Components.md)
 - [Directives](https://github.com/JarekSopinski/TIL/blob/master/Angular/Directives.md)
+- [Pipes](https://github.com/JarekSopinski/TIL/blob/master/Angular/Pipes.md)
 - [Services](https://github.com/JarekSopinski/TIL/blob/master/Angular/Services.md)
 
 #### React and Redux
