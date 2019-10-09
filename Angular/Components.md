@@ -65,3 +65,64 @@ In this case "active" class will be added only if isActive variable is truthy.
 A variation of property binding, used to dynamicly set the value of style property, i.e.:
 
   <button [style.backgroundColor]="isActive ? 'blue' : 'white'"></button>
+
+### Event binding
+
+To send data in a different direction (from the view) we use event binding.
+
+Below is a simple example of triggering console log by clicking a button binded to the onSave() method:
+
+  <button (click)="onSave()">Save</button>
+
+  export class FooComponent {
+    onSave() {
+      console.log('button was clicked');
+    }
+  }
+
+#### Accessing event object
+
+To get access to the event object, we have to add this as a "$event" parameter to the method. Notice the dollar sign.
+
+  <button (click)="onSave($event)">Save</button>
+
+  export class FooComponent {
+    onSave($event) {
+      console.log($event);
+    }
+  }
+
+We can also use stopPropagation() method with the $event parameter:
+
+    export class FooComponent {
+    onSave($event) {
+      $event.stopPropagation();
+      console.log($event);
+    }
+  }
+
+#### Event filtering
+
+Events can be filtered, i.e. to trigger button press event only for certain button:
+
+  <input (keyup.enter)="onKeyUp()" />
+
+In the above example event will be triggered only upon pressing enter button.
+
+#### Template variables
+
+Let's say that we want to access an input's value. A standard way would be to access a property of $event object:
+
+  <input (keyup.enter)="onKeyUp($event)" />
+
+  onKeyUp($event) {
+    console.log($event.target.value);
+  }
+
+In Angular, instead of using an $event object, we can declare a variable that references an input field. This is called a template variable. Below "#email" is an example of a template variable. Notice the "#" sign at the beginning.
+
+  <input #email (keyup.enter)="onKeyUp(email.value)" />
+
+  onKeyUp(email) {
+    console.log(email);
+  }
