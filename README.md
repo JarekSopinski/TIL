@@ -2,7 +2,7 @@
 
 > This is my own coding notebook: various tools, tricks and solutions for various problems I encountered. I create these notes mostly for my future self, but if you'll find it useful, I'll be very glad!
 
-_38 TILs and grows..._
+_48 TILs and grows..._
 
 ---
 
@@ -68,6 +68,7 @@ _38 TILs and grows..._
 
 #### Angular
 - [Components](https://github.com/JarekSopinski/TIL/blob/master/Angular/Components.md)
+- [Component API](https://github.com/JarekSopinski/TIL/blob/master/Angular/Component_API.md)
 - [Directives](https://github.com/JarekSopinski/TIL/blob/master/Angular/Directives.md)
 - [Pipes](https://github.com/JarekSopinski/TIL/blob/master/Angular/Pipes.md)
 - [Services](https://github.com/JarekSopinski/TIL/blob/master/Angular/Services.md)
