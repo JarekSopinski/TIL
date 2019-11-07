@@ -63,3 +63,93 @@ In AppComponent:
     <favorite [is-favorite]="post.isFavorite"></favorite>  
 
 Now in FavoriteComponent we can change it name (isFavorite), but as long as alias stays the same, we don't have to update anyting in other components that use FavoriteComponent.
+
+### Output properties
+
+#### Adding output property with the Output decorator
+
+In AppComponent:
+
+    export class AppComponent {
+        onFavoriteChanged(){
+            console.log('Favorite changed');
+        }
+    }
+
+    <favorite (change)="onFavoriteChanged()"></favorite>
+
+In FavoriteComponent:
+
+    import { ... Output, EventEmitter} from '@angular/core';
+
+    export class FavoriteComponent {
+        @Output change = new EventEmitter(); // change is the name of our (new instance of) EventEmitter
+        onClick(){
+            this.change.emit; // 'emit' method raises an event - notifies, that an event happend
+        }
+    }
+
+#### Passing event's data with an output property
+
+We can pass data to event's subscriber (in this case AppComponent). When event is emitted, we can pass it some value, that will be availabe to the subscriber. This value sets a new state of the component.
+
+In this example 'change' is the name of output property.
+
+In FavoriteComponent:
+
+    export class FavoriteComponent {
+        @Output change = new EventEmitter();
+        onClick(){
+            this.isSelected = !this.isSelected;
+            this.change.emit({ newValue: this.isSelected });
+        }
+    }
+
+In AppComponent:
+
+    export class AppComponent {
+        onFavoriteChanged(eventArgs){
+            console.log(eventArgs.newValue);
+        }
+    }
+
+    <favorite (change)="onFavoriteChanged($event)"></favorite>
+    // $event can be anything we pass while raising an event
+
+#### Using interface for event's data
+
+It's a good practice to use an interface, that will define shape of eventArgs object.
+
+In FavoriteComponent:
+
+    export interface FavoriteChangedEventArgs {
+        newValue: boolean
+    }
+
+In AppComponent:
+
+    import { FavoriteChangedEventArgs } from...
+
+    export class AppComponent {
+        onFavoriteChanged(eventArgs: FavoriteChangedEventArgs){
+            console.log(eventArgs.newValue);
+        }
+    }
+
+#### Aliasing output property
+
+As with input properties, output properties can have aliases.
+
+In FavoriteComponent:
+
+    export class FavoriteComponent {
+        @Output('change') changeNewName = new EventEmitter();
+        onClick(){
+            this.isSelected = !this.isSelected;
+            this.changeNewName.emit({ newValue: this.isSelected });
+        }
+    }
+
+In AppComponent output will still work under 'change', event after the name was changed to changeNewName in FavoriteComponent.
+
+    <favorite (change)="onFavoriteChanged($event)"></favorite>
