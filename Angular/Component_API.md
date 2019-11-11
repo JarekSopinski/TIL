@@ -153,3 +153,38 @@ In FavoriteComponent:
 In AppComponent output will still work under 'change', event after the name was changed to changeNewName in FavoriteComponent.
 
     <favorite (change)="onFavoriteChanged($event)"></favorite>
+
+### ngContent
+
+If we want the consumer of reusable compoent to be able to add content iside a component, we can use ngContent. Any content added with selector matching ngContent's tag selector will replace this tag. 
+
+If we want to add something witout additional containers (line in the case of '.heading' below), we can use ng-container tag (on the consumer's side).
+
+We don't have to add selector to ngContent if there's only one ngContent tag.
+
+I.e.:
+
+In PanelComponent:
+
+    @Component({
+      selector: 'bootstrap-panel'
+    })
+
+    <div class="card">
+        <div class="card-header">
+            <ng-content select=".heading"></ng-content>
+        </div>
+        <div class="card-body">
+            <ng-content select=".body"></ng-content>
+        </div>
+    </div>
+
+In AppComponent (consumer):
+
+    <bootstrap-panel>
+        <ng-container class="heading">Some title</ng-container>
+        <div class="body">
+            <h2>Some subtitle</h2>
+            <p>Some content</p>
+        </div>
+    </bootstrap-panel>
