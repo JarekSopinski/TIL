@@ -76,6 +76,7 @@ _51 TILs and grows..._
 #### React and Redux
 - [Components](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Components.md)
 - [HOC](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/HOC.md)
+- [Redux](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Redux.md)
 - [Router](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Router.md)
 - [Eeasily toggle element's visibility](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Easily_toggle_elements_visibility.md)
 - [Redux devtools setup](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Redux_DevTools_Setup.md)
