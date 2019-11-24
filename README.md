@@ -2,7 +2,7 @@
 
 > This is my own coding notebook: various tools, tricks and solutions for various problems I encountered. I create these notes mostly for my future self, but if you'll find it useful, I'll be very glad!
 
-_51 TILs and grows..._
+_50 TILs and grows..._
 
 ---
 
@@ -78,8 +78,7 @@ _51 TILs and grows..._
 - [HOC](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/HOC.md)
 - [Redux](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Redux.md)
 - [Router](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Router.md)
-- [Eeasily toggle element's visibility](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Easily_toggle_elements_visibility.md)
-- [Redux devtools setup](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Redux_DevTools_Setup.md)
+- [Misc](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Misc.md)
 
 #### Node and Express
 - [Creating simple server](https://github.com/JarekSopinski/TIL/blob/master/Node%26Express/creating-simple-server.md)
