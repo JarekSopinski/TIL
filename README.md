@@ -2,7 +2,7 @@
 
 > This is my own coding notebook: various tools, tricks and solutions for various problems I encountered. I create these notes mostly for my future self, but if you'll find it useful, I'll be very glad!
 
-_48 TILs and grows..._
+_49 TILs and grows..._
 
 ---
 
@@ -74,6 +74,7 @@ _48 TILs and grows..._
 - [Services](https://github.com/JarekSopinski/TIL/blob/master/Angular/Services.md)
 
 #### React and Redux
+- [Components](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Components.md)
 - [Eeasily toggle element's visibility](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Easily_toggle_elements_visibility.md)
 - [Redux devtools setup](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Redux_DevTools_Setup.md)
 
