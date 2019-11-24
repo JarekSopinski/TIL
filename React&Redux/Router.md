@@ -93,3 +93,61 @@ If a component isn't added as a Route, it won't have access to this data by defa
     }
 
     export default withRouter(Contact);
+
+### Route params
+
+A Route component can have path based on our custom parameter. For example:
+
+    <Route path="/:post_id" component={Post} />
+
+If we want to generate some specific content based on param's value (in this example, post_id), we can do it be accessing routing data, as it was described in a previous section. All params are available inside props.match.params object.
+
+class Post extends Component {
+
+    state = {
+        id: null
+    }
+
+    componentDidMount(){
+        let id = this.props.match.params.post_id;
+        this.setState({
+            id: id
+        })
+    }
+
+    render (){
+        return (
+            <div>
+                <p>This post id is {this.state.id}</p>
+            </div>
+        )
+    }
+
+}
+
+### Switch tag
+
+If we want the Router to load only one (first) component that matches the path, we can additionally wrap our Routes inside Switch, that is imported from 'react router-dom'.
+
+    class App extends Component {
+
+      render(){
+        return (
+          <BrowserRouter>
+            <div className="my-app">
+              <Navbar />
+                <Switch>
+                    <Route exact path='/' component={Home} />
+                    <Route path='/about' component={About} />
+                    <Route path='/contact' component={Contact} />
+                    <Route path="/:post_id" component={Post} />
+                </Switch>
+              <Footer />
+            </div>
+          </BrowserRouter>
+        );
+      }
+
+    }
+
+In this example on the path '/contact' only Contact component will be mounted. If Switch wasn't used, Post component would also be mounted, because Router would consider 'contact' a possible post_id param from the Post component.
