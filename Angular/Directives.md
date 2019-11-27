@@ -45,3 +45,13 @@ An alternative way of conditionally hiding an element can be to bind a condition
     </div>
 
 The main difference between this to approaches is the fact that ngIf removes an element from the DOM, while switching hidden attribute only hides it.
+
+### ngSwitch
+
+If we want to compare a property or a field against multiple values, we can use ngSwitch. In the example below it checks a value of "viewMode" and decides witch of the three div items should be rendered. Notice thath insise ngSwitchCase we fire have "" for an expression and then '' for the value ("''").
+
+    <div [ngSwitch]="viewMode">
+        <div *ngSwitchCase="'map'">Map View Content</div>
+        <div *ngSwitchCase="'list'">List View Content</div>
+        <div *ngSwitchDefault>Otherwise</div>
+    </div>
