@@ -16,6 +16,16 @@ Than in the template file we can use ngFor to create an ul list from this array:
         </li>   
     </ul>
 
+We can also use values exported from ngFor after saving them to local variables. I.e. if we want to render an index of the item:
+
+    <ul>
+        <li *ngFor="let item of items; index as i">
+            {{ i }} - {{ item }}
+        </li>
+    </ul>
+
+We can also check if an item is even, odd, first or last. Full list of exported values can be found [here, under "Local variables".](https://angular.io/api/common/NgForOf)
+
 ### ngIf
 
 ngIf renders an element if condition passed to it evaluates to true:
