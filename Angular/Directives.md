@@ -56,6 +56,16 @@ An alternative way of conditionally hiding an element can be to bind a condition
 
 The main difference between this to approaches is the fact that ngIf removes an element from the DOM, while switching hidden attribute only hides it.
 
+#### ngIf vs Safe Traversal Operator
+
+Sometimes we may want to check if a property exists before trying to render some value. We can do this with ngIf:
+
+    <span *ngIf="task.assignee">{{ task.assignee.name }}</span>
+
+In this case "task.assignee.name" will be rendered only if "task" object has an "assignee" value. Another way to achive this is to use Safe Traversal Operator:
+
+    <span>{{ task.assignee?.name }}</span>
+
 ### ngSwitch
 
 If we want to compare a property or a field against multiple values, we can use ngSwitch. In the example below it checks a value of "viewMode" and decides witch of the three div items should be rendered. Notice thath insise ngSwitchCase we fire have "" for an expression and then '' for the value ("''").
