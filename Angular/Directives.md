@@ -85,3 +85,14 @@ ngClass directive can be a cleaner alternative for class binding. Below is an ex
             'glyphicon-star-empty': !isSelected
         }"
     ></span>
+
+### ngStyle
+
+ngStyle works in a similar way to ngClass:
+
+    [ngStyle]="{
+        'backgroundColor': canSave ? 'blue' : 'gray',
+        'color': canSave ? 'white' : 'black'
+    }"
+
+Both ngStyle and ngClass are examples of attribute directives.
