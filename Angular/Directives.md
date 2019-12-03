@@ -106,3 +106,55 @@ ngStyle works in a similar way to ngClass:
     }"
 
 Both ngStyle and ngClass are examples of attribute directives.
+
+### Custom Directives
+
+We can use Angular CLI to generate a custom directive with the command:
+
+    ng g d input-format
+
+This stands for "Generate Directive (named) input-format". As a result new directive will be added to module's declarations. Two files will be generated: unit test file and .ts file called "input-format.directive.ts":
+
+    import { Directive } from '@angular/core';
+
+    @Directive({
+      selector: '[appInputFormat]'
+    })
+
+    export class InputFormatDirective {
+
+      constructor() { }
+
+    }
+
+An example below shows how to use this directive to format input's text on blur. Here we use an input property with the same selector's as directive's selector.
+
+    import { Directive, HostListener, ElementRef, Input } from '@angular/core';
+
+    @Directive({
+      selector: '[appInputFormat]'
+    })
+
+    export class InputFormatDirective {
+
+      @Input('appInputFormat') format;
+
+      constructor(private el: ElementRef) { }
+
+      @HostListener('blur') onBlur() {
+        let value: string = this.el.nativeElement.value;
+        this.format === 'lowercase' ?
+          this.el.nativeElement.value = value.toLowerCase()
+          :
+          this.el.nativeElement.value = value.toUpperCase();
+      }
+
+    }
+
+ElementRef is a service defined in Angular that gives us access to the DOM object.
+
+HostListener is a decorator function that allows us to subscribe to the events raised from the DOM element that hosts this directive.
+
+Our cutom directive can be now used in template files like this:
+
+    <input type="text" [appInputFormat]="'uppercase'" >
