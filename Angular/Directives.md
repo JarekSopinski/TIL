@@ -65,3 +65,23 @@ If we want to compare a property or a field against multiple values, we can use 
         <div *ngSwitchCase="'list'">List View Content</div>
         <div *ngSwitchDefault>Otherwise</div>
     </div>
+
+### ngClass
+
+ngClass directive can be a cleaner alternative for class binding. Below is an example that shows how ngClass can replace class binding.
+
+    // class binding
+    <span
+        class="glyphicon"
+        [class.glyphicon-star]="isSelected"
+        [class.glyphicon-star-empty]="!isSelected"
+    ></span>
+
+    // ngClass
+    <span
+        class="glyphicon"
+        [ngClass]="{
+            'glyphicon-star': isSelected,
+            'glyphicon-star-empty': !isSelected
+        }"
+    ></span>
