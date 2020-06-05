@@ -70,6 +70,7 @@ _56 TILs and grows..._
 - [Components](https://github.com/JarekSopinski/TIL/blob/master/Angular/Components.md)
 - [Component API](https://github.com/JarekSopinski/TIL/blob/master/Angular/Component_API.md)
 - [Directives](https://github.com/JarekSopinski/TIL/blob/master/Angular/Directives.md)
+- [Forms](https://github.com/JarekSopinski/TIL/blob/master/Angular/Forms.md)
 - [Pipes](https://github.com/JarekSopinski/TIL/blob/master/Angular/Pipes.md)
 - [Services](https://github.com/JarekSopinski/TIL/blob/master/Angular/Services.md)
 
