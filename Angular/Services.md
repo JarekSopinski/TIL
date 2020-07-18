@@ -56,6 +56,12 @@ Than in components, instead of creating new instances of a service, we add it as
         }
     }
 
+We can also add a replacement to providers, if we want to use our own class instead of base Angular's class. In the example below, AppErrorHandler (custom class) replaces ErrorHandler (Angular class):
+
+    providers: [
+      { provide: ErrorHandler, useClass: AppErrorHandler }
+    ],
+
 ### Generating a service with Angular CLI
 
 We can use Angular CLI to automaticly generate a service by using a command:
