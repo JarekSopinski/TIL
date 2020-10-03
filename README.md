@@ -73,6 +73,7 @@ _56 TILs and grows..._
 - [Forms](https://github.com/JarekSopinski/TIL/blob/master/Angular/Forms.md)
 - [HTTP Services](https://github.com/JarekSopinski/TIL/blob/master/Angular/HTTP_Services.md)
 - [Pipes](https://github.com/JarekSopinski/TIL/blob/master/Angular/Pipes.md)
+- [Routing](https://github.com/JarekSopinski/TIL/blob/master/Angular/Routing.md)
 - [Services](https://github.com/JarekSopinski/TIL/blob/master/Angular/Services.md)
 
 #### React and Redux
