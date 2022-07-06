@@ -1,0 +1,36 @@
+## React Hooks
+
+Hooks allow functional components to use more advanced functionalities, similar to class-bases components. 
+
+#### useState
+
+Function that lets you use state in a functional component.
+
+    const [
+        activeItem, // represents piece of state
+        setActiveItem // function called to update piece of state
+    ] = useState(null); // initial value for piece of state
+
+#### useEffect
+
+Function that lets you use something like lifecycle methods in a functional components.
+useEffect() takes two arguments: a callback function and an array that defines, when this is executed:
+- [] - Run at initial render
+- nothing (no array) - Run at initial render AND run after every rerender
+- [dataOne, dataTwo] - Run at initial render AND run after every rerender IF any of the provided values has changed since the last render. This array can keep multiple values.
+
+    useEffect(() => {
+        console.log('I ONLY RUN ONCE');
+    }, []);
+
+    useEffect(() => {
+        console.log('I RUN AFTER EVERY RENDER AND AT INITIAL RENDER');
+    });
+
+    useEffect(() => {
+        console.log('I RUN AFTER EVERY RENDER AND AT INITIAL RENDER');
+    }, [dataOne, dataTwo]);
+
+#### useRef
+
+Function that lets you create a 'ref' in a function component.

@@ -42,6 +42,7 @@ _56 TILs and grows..._
 
 
 #### JavaScript / Arrays
+- [Array destructuring](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Arrays/Array_destructuring.md)
 - [Put all arguments into one array](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Arrays/Arguments_into_array_using_Arrayfrom.md)
 - [Break an array into equal subarrays](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Arrays/Break_array_into_equal_subarrays.md)
 - [Copy an array without references](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Arrays/Copy_an_array_without_references.md)
@@ -81,6 +82,7 @@ _56 TILs and grows..._
 - [HOC](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/HOC.md)
 - [Redux](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Redux.md)
 - [Router](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Router.md)
+- [Misc](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Hooks.md)
 - [Misc](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Misc.md)
 
 #### Node and Express

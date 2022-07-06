@@ -162,3 +162,21 @@ Of course, ngModel has to be imported from the Forms module. We add it  to impor
         FormsModule
       ]
     })
+
+#### Component's Lifecycle
+
+1) ngOnChanges - every time input properties recive new values. It recives an argument 'changes' of type SimpleChanges.
+
+2) ngOnInit - once the component is initialized.
+
+3) ngDoCheck - during every chage detection run.
+
+4) ngAfterContentInit - called after content (ng-content) has been projected into view.
+
+5) ngAfterContentChecked - called every time the projected content has been checked.
+
+6) ngAfterViewInit - called after the component's view (and child views) has been initialized (after its finished rendering).
+
+7) ngAfterViewChecked - called every time the view (and child views) have been checked.
+
+8) ngOnDestroy - called once the component is about to be destroyed (removed from the DOM).
