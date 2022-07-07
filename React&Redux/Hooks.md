@@ -31,6 +31,19 @@ useEffect() takes two arguments: a callback function and an array that defines, 
         console.log('I RUN AFTER EVERY RENDER AND AT INITIAL RENDER');
     }, [dataOne, dataTwo]);
 
+useEffect() can return another function, that can be used to run some cleanup. This returned function will be called at the start of useEffect in two scenarios:
+any time useEffect runs AGAIN 
+OR
+when component is removed from DOM. 
+It will not run the first time useEffect() runs!
+
+    useEffect(() => {
+        console.log('I RUN AFTER EVERY RENDER AND AT INITIAL RENDER');
+        return () => {
+            console.log('CLEANUP);
+        }
+    }, [data]);
+
 #### useRef
 
 Function that lets you create a 'ref' in a function component.
