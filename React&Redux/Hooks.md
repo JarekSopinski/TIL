@@ -47,3 +47,13 @@ It will not run the first time useEffect() runs!
 #### useRef
 
 Function that lets you create a 'ref' in a function component.
+
+#### Custom Hooks
+
+Custom Hooks can be created by extracting hook-related code out of a function component. Custom hooks always make use of at least one primitive hook internally. Each custom hook should have one purpose.
+
+To create a custom hook:
+- Identify each line of code related to some single purpose;
+- Identify the inputs to that code;
+- Identify the outputs to that code;
+- Extract all of the code into a separate function, receiving the inputs as arguments, and returning the outpusts
