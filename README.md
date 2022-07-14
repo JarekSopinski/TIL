@@ -39,6 +39,7 @@ _56 TILs and grows..._
 - [Bind](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Objects/Bind.md)
 - [Classes](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Objects/Classes.md)
 - [Constructors and prototypes](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Objects/Constructors_and_Prototypes.md)
+- [Key interpolation](https://github.com/JarekSopinski/TIL/blob/master/JavaScript/Objects/Key_interpolation.md)
 
 
 #### JavaScript / Arrays
