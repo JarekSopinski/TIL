@@ -83,7 +83,8 @@ _56 TILs and grows..._
 - [HOC](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/HOC.md)
 - [Redux](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Redux.md)
 - [Router](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Router.md)
-- [Misc](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Hooks.md)
+- [Hooks](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Hooks.md)
+- [Context](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Contex.md)
 - [Misc](https://github.com/JarekSopinski/TIL/blob/master/React%26Redux/Misc.md)
 
 #### Node and Express
