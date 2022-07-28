@@ -2,8 +2,6 @@
 
 > This is my own coding notebook: various tools, tricks and solutions for various problems I encountered. I create these notes mostly for my future self, but if you'll find it useful, I'll be very glad!
 
-_56 TILs and grows..._
-
 ---
 
 #### Categories:
@@ -125,6 +123,7 @@ _56 TILs and grows..._
 
 #### Miscellaneous
 - [Install LAMP on Ubuntu](https://github.com/JarekSopinski/TIL/blob/master/Misc/installing-lamp-on-ubuntu.md)
+- [Unit Testing in JavaScript based on Vitest library](https://github.com/JarekSopinski/TIL/blob/master/Misc/js-unit-testing-with-vitest.md)
 
 ---
 
