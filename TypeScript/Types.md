@@ -1,3 +1,5 @@
+## TypeScript Types
+
 ### Core Types
 
 - any (any kind of value, no specific assignment)
