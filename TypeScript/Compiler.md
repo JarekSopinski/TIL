@@ -15,3 +15,10 @@ In the tsconfig.json:
 
     "exclude": ["foo.ts", "bar.ts", "*.dev.ts", "node_modules"]
     "include": ["app.ts"]
+
+### Setting root dir and output dir
+
+In the tsconfig.json:
+
+    "outDir": "./dist",
+    "rootDir": "./src"
