@@ -65,6 +65,12 @@ Then we add matcher (type of assertions), from Jest-DOM.
     expect(linkElement).toBeInTheDocument();
     expect(elementsArray).toHaveLength(7);
 
+### Recommended ESLint Plugins
+
+https://github.com/testing-library/eslint-plugin-testing-library
+https://github.com/testing-library/eslint-plugin-jest-dom
+https://github.com/veritem/eslint-plugin-vitest
+
 ### Example of test searching for text in a component
 
     import { render, screen } from '@testing-library/react';
@@ -75,3 +81,34 @@ Then we add matcher (type of assertions), from Jest-DOM.
         const headingElement = screen.getByText(/learn react/i);
         expect(headingElement).toBeInTheDocument();
     })
+
+### Logging roles
+
+If we're unsure about roles in the component, we can log them like this. Roles will be logged in the console upon running npm test.
+
+    const { container } = render(<App />);
+    logRoles(container);
+
+### Simple example of functional test - clicking a button and changing color
+
+For events, we use fireEvent function, which can be imported from '@testing-library/react'.
+
+    test('buttons click flow', () => {
+        // render App
+        render(<App />);
+
+        // find the button
+        const buttonElement = screen.getByRole('button', {name: /blue/i});
+
+        // check initial color
+        expect(buttonElement).toHaveClass('red');
+
+        // click the button
+        fireEvent.click(buttonElement);
+
+        // check button text
+        expect(buttonElement).toHaveTextContent(/red/i);
+
+        // check button color
+        expect(buttonElement).toHaveClass('blue');
+    });
