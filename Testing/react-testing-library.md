@@ -91,7 +91,7 @@ If we're unsure about roles in the component, we can log them like this. Roles w
 
 ### Simple example of functional test - clicking a button and changing color
 
-For events, we use fireEvent function, which can be imported from '@testing-library/react'.
+For events, we can use fireEvent function, which can be imported from '@testing-library/react'.
 
     test('buttons click flow', () => {
         // render App
@@ -112,3 +112,134 @@ For events, we use fireEvent function, which can be imported from '@testing-libr
         // check button color
         expect(buttonElement).toHaveClass('blue');
     });
+
+### userEvent vs fireEvent
+
+Another way for fireing events is user-event, which simulates full interaction. This is recommended way to test events.
+
+userEvent is provided by additional package @testing-library/user-event.
+
+It requires starting a session with a setup() method.
+Notice that userEvent APIs always return a Promise. So they must be awaited.
+
+    const user = userEvent.setup();
+    await user.click(element);
+
+### screen Query Methods
+
+Screen query methods (finding els in DOM) are constructed like this:
+    
+    command[All]ByQueryType
+
+    screen.getByText('foobar');
+    screen.queryByText('foobar');
+
+command
+- get: expect element to be in DOM
+- query: expect element NOT to be in DOM
+- find: expect element to appear async
+
+All
+- exclude: expect only one match
+- include: expect more than one match
+
+QueryType
+- Role
+- AltText
+- Text
+- Form elements (PlaceholderText, LabelText, DisplayValue)
+
+### Mock Service Worker
+
+This is a tool for running tests on mocked API responses.
+
+#### Purpose
+- intercept network calls
+- return specified responses
+- Prevents actual network calls during tests
+- Set up tests conditions using server responses
+
+#### To setup MSW:
+
+    npm install msw
+
+1. Create handlers
+
+        // src/mocks/handlers.js
+        import { http, HttpResponse } from 'msw';
+
+        export const handlers = [
+          http.get('/resource', () => {
+                return HttpResponse.json({
+                    ...some mocked data
+                });
+          }),
+        ]
+
+2. Create test server
+
+        // src/mocks/node.js
+        import { setupServer } from 'msw/node'
+        import { handlers } from './handlers'
+
+        export const server = setupServer(...handlers)
+
+3. Make sure test server listens during all tests. Server handlers should be reset after each test.
+
+        // vitest.setup.js
+        import { beforeAll, afterEach, afterAll } from 'vitest'
+        import { server } from './src/mocks/node'
+
+        beforeAll(() => server.listen())
+        afterEach(() => server.resetHandlers())
+        afterAll(() => server.close())
+
+### Using findBy on async tests
+
+When you are waiting for someting to appear asynchronously on the page, you must use
+
+    await findBy
+
+For example:
+
+    const loadedImages = await screen.findAllByRole('img');
+
+### Testing async errors
+
+If we want to test errors, we can override default handlers in a test:
+
+    import { http, HttpResponse } from 'msw';
+    import { server } from '../../../mocks/server';
+
+    test('handles server error', async () => {
+
+        server.resetHandlers(
+            // Notice that here we're NOT passing an array!
+            http.get('http://localhost:3030/foobar', () => {
+                return new HttpResponse(null, { status: 500 })
+            }),
+            http.get('http://localhost:3030/zoobar', () => {
+                return new HttpResponse(null, { status: 500 })
+            }),
+        );
+
+        //... rest of the test, i.e. how component will react to error...
+    });
+
+### Debugging
+
+#### Restricting tests
+
+Press 'p' in the console (where tests are running), than type a name of a test file you want to filter by. Tests will run only for this file. It's then easier to debug this certain test.
+
+We can also add .only to a certain test - only this test in the file will run.
+
+    test.only('foobar', () => {});
+
+Alternatively, we can skip:
+
+    test.skip('foobar', () => {});
+
+### Useful links
+
+https://testing-library.com/docs/react-testing-library/cheatsheet/
