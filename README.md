@@ -125,6 +125,10 @@
 
 - [SOLID Design Principles](https://github.com/JarekSopinski/TIL/blob/master/DesignPatterns/SOLID.md)
 
+#### Testing
+
+-[React Testing Library](https://github.com/JarekSopinski/TIL/blob/master/Testing/react-testing-library)
+
 #### Miscellaneous
 - [Install LAMP on Ubuntu](https://github.com/JarekSopinski/TIL/blob/master/Misc/installing-lamp-on-ubuntu.md)
 - [Unit Testing in JavaScript based on Vitest library](https://github.com/JarekSopinski/TIL/blob/master/Misc/js-unit-testing-with-vitest.md)
