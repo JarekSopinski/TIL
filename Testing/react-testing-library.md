@@ -7,7 +7,7 @@ RTL
 - Provides ways to manipulate and examine simulated DOM
 
 Jest / Vitest
-- Test runners that find tests, run tests and determines wheter they pass or fail.
+- Test runners that find tests, run tests and determines whether they pass or fail.
 
 Jest and Vitest have almost identical syntax, they only have different setup.
 
@@ -26,7 +26,7 @@ Write tests before writing code
 
 - Unit tests - tests one unit of code in isolation
 - Integration tests - how multiple units work together
-- Functional tests - tests a particular function of software (not testing code, but testing behaviour)
+- Functional tests - tests a particular function of software (not testing code, but testing behavior)
 - E2E tests - use actual browser and server
 
 ### Functional testing
@@ -38,12 +38,12 @@ Prones: very easy to pinpoint failures
 Cones: Further from how users interact with software, more likely to break with refactoring
 
 Functional testing - include all relevant units, test behavior
-Prones: close to how users interact with software, less likely to break with refactoting
+Prones: close to how users interact with software, less likely to break with refactoring
 Cones: More difficult to debug failing tests
 
 ### Accessibility and finding elements
 
-RTL recommends fiding elements by accessibility handles.
+RTL recommends finding elements by accessibility handles.
 https://testing-library.com/docs/queries/about/#priority
 
 Role definitions: https://www.w3.org/TR/wai-aria/#role_definitions
@@ -115,7 +115,7 @@ For events, we can use fireEvent function, which can be imported from '@testing-
 
 ### userEvent vs fireEvent
 
-Another way for fireing events is user-event, which simulates full interaction. This is recommended way to test events.
+Another way for firing events is user-event, which simulates full interaction. This is recommended way to test events.
 
 userEvent is provided by additional package @testing-library/user-event.
 
@@ -196,7 +196,7 @@ This is a tool for running tests on mocked API responses.
 
 ### Using findBy on async tests
 
-When you are waiting for someting to appear asynchronously on the page, you must use
+When you are waiting for something to appear asynchronously on the page, you must use
 
     await findBy
 
