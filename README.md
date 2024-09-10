@@ -116,11 +116,6 @@
 - [File system](https://github.com/JarekSopinski/TIL/blob/master/PHP/file-system.md)
 - [Classes](https://github.com/JarekSopinski/TIL/blob/master/PHP/php-classes.md)
 
-#### SQL
-
-- [SQL basics](https://github.com/JarekSopinski/TIL/blob/master/SQL/sql-basics.md)
-- [SQL and PHP](https://github.com/JarekSopinski/TIL/blob/master/SQL/sql-and-php.md)
-
 #### Design Patterns
 
 - [SOLID Design Principles](https://github.com/JarekSopinski/TIL/blob/master/DesignPatterns/SOLID.md)
