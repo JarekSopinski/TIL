@@ -1,4 +1,4 @@
-## SQL basics
+## SQL basics (old)
 
 SQL is a relational database management system.
 
