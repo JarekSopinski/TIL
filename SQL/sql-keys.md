@@ -44,3 +44,25 @@ Possible 'ON DELETE' and 'ON UPDATE' values:
 - CASCADE - perform the same action (e.g. deleting a related row) on the row with the foreign key
 - SET NULL - set the foreign key value to NULL if the related row was deleted
 - SET DEFAULT - set the foreign key value to its DEFAULT value if the related row was deleted
+
+### COMPOSITE PRIMARY KEYS
+
+You must only have one primary key per table. BUT! Primary keys can 'span multiple columns', as 'composite keys' (created from multiple columns).
+
+For example, in 'intermediate table' that serves as a relation between tables with n:n relationship, we will have id acting like a 'surrogate key'. It acts as a unique primary identifier, but it isn't the real identification criteria.
+
+    CREATE TABLE projects_employees (
+        id SERIAL PRIMARY KEY, -- 'surrogate key'
+        employee_id INT REFERENCES employees ON DELETE CASCADE,
+        project_id INT REFERENCES projects ON DELETE CASCADE
+    );
+
+Therefore we can get rid of this 'surrogate key' and create 'composite primary key' from the combination of employee_id and project_id.
+
+    CREATE TABLE projects_employees (
+        employee_id INT REFERENCES employees ON DELETE CASCADE,
+        project_id INT REFERENCES projects ON DELETE CASCADE,
+        PRIMARY KEY (employee_id, project_id) -- Composite Primary Key
+    );
+
+That is not required, of course. There is nothing wrong with using surrogate keys! Surrogate keys actually might be better for performance reasons.
