@@ -119,3 +119,13 @@ Possible 'ON DELETE' and 'ON UPDATE' values:
 - One-to-Many (1:n) - one record in table A has one or many related records in table B, but every record in table B can have only one reference to table A.
 - Many-to-Many (n:n) - one record in table A has one or many related tables in table B - and vice versa
 - One-to-One (1:1) - one record in table A belongs to exactly one record in table B - and vice versa
+
+#### Intermediate tables
+
+In case Many-to-Many relationships, we require 'intermediate tables'. For example, if we want to create n:n relationship between 'employees' and 'projects' tables (one employee can have multiple projects, one project can have multiple employees), we create 'projects_employees' intermediate table, that has 'project_id' and 'employee_id' foreign keys.
+
+    CREATE TABLE projects_employees (
+        id SERIAL PRIMARY KEY,
+        employee_id INT REFERENCES employees ON DELETE CASCADE,
+        project_id INT REFERENCES projects ON DELETE CASCADE
+    );
