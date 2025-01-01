@@ -81,25 +81,6 @@ And table constraints, for example:
     salary INT,
     CHECK (salary > 0)
 
-### Setting unique IDs & Primary Keys
-
-    CREATE TABLE users (
-        id INT PRIMARY KEY AUTO_INCREMENT,
-        full_name VARCHAR(300) NOT NULL
-    );
-
-PRIMARY KEY is a constraint - combination of NUT NULL and UNIQUE.
-Only one per table is allowed.
-
-AUTO_INCREMENT is an attribute - the db system will automatically insert and incrementing value.
-This works only in MySQL, in most environments use:
-
-    SERIAL PRIMARY KEY
-
-instead of
-
-    INT PRIMARY KEY AUTO_INCREMENT
-
 ### Text: encoding and collation
 
 - Encoding - which characters are supported and can be stored?

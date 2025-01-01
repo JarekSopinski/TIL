@@ -91,29 +91,6 @@ UNION is helpful if we have rows returned by one select statement and we want to
 
 Note that UNION cannot be used if result sets have different number of columns.
 
-### FOREIGN KEY CONSTRAINTS
-
-We can create references for foreign keys:
-
-    address_id INT REFERENCES addresses (id) ON DELETE CASCADE
-
-Column name ('addresses (id)') can be omitted if we're adding relation to a primary key of given table.
-
-In MySQL a different syntax must be used (above syntax will be ignored):
-
-    some_column_name VARCHAR(200),
-      FOREIGN KEY (some_column_name) REFERENCES other_table (other_column) ON DELETE ...
-
-Commands 'ON DELETE' and 'ON UPDATE' define what should happen to a row if a related row is deleted or updated.
-In the example above, 'CASCADE' would delete related row.
-
-Possible 'ON DELETE' and 'ON UPDATE' values:
-- RESTRICT - prevent the intended action (e.g. deleting a related row)
-- NO ACTION (default) - prevent the intended action (e.g. deleting a related row); check can be deferred, e.g. as part of a transaction
-- CASCADE - perform the same action (e.g. deleting a related row) on the row with the foreign key
-- SET NULL - set the foreign key value to NULL if the related row was deleted
-- SET DEFAULT - set the foreign key value to its DEFAULT value if the related row was deleted
-
 ### Data relationship types
 
 - One-to-Many (1:n) - one record in table A has one or many related records in table B, but every record in table B can have only one reference to table A.
