@@ -106,3 +106,21 @@ In case Many-to-Many relationships, we require 'intermediate tables'. For exampl
         employee_id INT REFERENCES employees ON DELETE CASCADE,
         project_id INT REFERENCES projects ON DELETE CASCADE
     );
+
+### Self-Referential Relationships
+
+A data entity has a relationship to itself (i.e. internal relationship).
+
+    CREATE TABLE employees (
+        id SERIAL PRIMARY KEY,
+        first_name VARCHAR(300) NOT NULL,
+        last_name VARCHAR(300) NOT NULL,
+        supervisor_id INT REFERENCES employees ON DELETE SET NULL -- self-reference
+    );
+
+In this example, we can run query to get list of employees with their supervisors.
+The query joins results from the same table! We're joining the table with itself, but using different aliases.
+
+    SELECT *
+    FROM employees AS e1
+    INNER JOIN employees AS e2 ON e1.supervisor_id = e2.id;

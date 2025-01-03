@@ -66,3 +66,5 @@ Therefore we can get rid of this 'surrogate key' and create 'composite primary k
     );
 
 That is not required, of course. There is nothing wrong with using surrogate keys! Surrogate keys actually might be better for performance reasons.
+
+In a similar way to composite primary keys, we can create composite foreign keys.
