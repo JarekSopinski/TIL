@@ -36,7 +36,21 @@ In the example below, SUM will return 'nr_guests' by each 'booking_date'.
 
 HAVING is a filter (like WHERE) which can be used with GROUP BY. It checks the result of aggregate function. In the query, it is placed after GROUP BY statement.
 
+While WHERE applies to raw data, HAVING applies to aggregated data (by GROUP BY).
+
     SELECT booking_date, COUNT(booking_date)
     FROM bookings
     GROUP BY booking_date
     HAVING SUM(amount_billed) > 30;
+
+### Nested subqueries
+
+A nested query is a query built on a result of another query.
+
+    SELECT MIN(daily_sum) -- 'Parent query'
+    FROM (
+        -- Subquery
+        SELECT booking_date, SUM(amount_billed) AS daily_sum
+        FROM bookings
+        GROUP BY booking_date
+    ) AS daily_table; -- Result of subquery MUST have an alias!
