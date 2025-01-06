@@ -54,3 +54,22 @@ A nested query is a query built on a result of another query.
         FROM bookings
         GROUP BY booking_date
     ) AS daily_table; -- Result of subquery MUST have an alias!
+
+### Window functions
+
+Window functions can be used to return aggregated values without aggregation of entire table.
+In the example below, the result will be 3 columns: booking date, amount_tipped and sum of all tips.
+
+    SELECT booking_date, amount_tipped, SUM(amount_tipped) OVER()
+    FROM bookings;
+
+In the next example, the last column will have sum of amount tipped, partitioned by a booking date.
+
+    SELECT booking_date, amount_tipped, SUM(amount_tipped) OVER(PARTITION BY booking_date)
+    FROM bookings;
+
+Example with RANK:
+
+    SELECT booking_date, amount_tipped, RANK()
+    OVER(PARTITION BY booking_date ORDER BY amount_tipped DESC)
+    FROM bookings;
