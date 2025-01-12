@@ -3,5 +3,6 @@
         "LONGTEXT",
         "SMALLINT",
         "VARCHAR"
-    ]
+    ],
+    "cSpell.enabled": false
 }
