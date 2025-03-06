@@ -18,24 +18,6 @@ Funkcje usuwania:
 - Remove('foo') - uwuwa pierwsze wystąpienie określonej wartości z listy
 - RemoveRange(2,3) - usuwa zakres listy (indeks początkowy, liczba usuniętych elementów)
 
-## LINQ
-
-Czyli Language-Integrated Query: to nazwa zestawu technologii opartego na integracji możliwości zapytań bezpośrednio z językiem C#.
-
-Metody LINQ pozwalają np. filtrować wyniki i budować z nich nowe listy na podstawie własnych predykamentów.
-
-Przykładowo:
-
-    List<Person> youngEmployees = employees.Where(EmployeeIsYoung).ToList(); // znajdź pracowników urodzonych przed daną datą
-    Person bob = youngEmployees.FirstOrDefault(EmployeeIsBob); // znajdź pracownika o imieniu Bob
-    List<string> employeesFirstNames = employees.Select(GetEmployeeFirstName).ToList(); // zbuduj listę imion pracowników
-    DateTime youngestEmployeeDateOfBirth = employees.Max(GetEmployeeDateOfBirth); // znajdź najmłodszego pracownika
-    DateTime oldestEmployeeDateOfBirth = employees.Min(GetEmployeeDateOfBirth); // znajdź najstarszego pracownika
-
-Powszechną praktyką jest, aby w miejscu predykatów używać wyrażeń lambda, np.:
-
-    List<Person> youngEmployees = employees.Where(e => e.GetDateOfBirth() > new DateTime(2000, 1, 1)).ToList();
-
 ## Słownik
 
 Słownik to kolekcja przechowująca elementy jako pary typu klucz-wartość. Przyjmuje ona dwa parametry generyczne: typ klucza słownika i typ wartości danego elementu.
