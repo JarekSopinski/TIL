@@ -171,3 +171,31 @@ Możliwe jest również grupowanie złożone po wielu właściwościach. Wówcza
         var maxReviews = group.Max(g => g.Reviews);
         var reviewsCount = group.Sum(g => g.Reviews)
     }
+
+## Łączenie danych
+
+### Join
+
+Operator Join pozwala połączyć zbiory danych na podstawie określonych relacji. W poniższym przykładzie łączymy zbiory 'addresses' i 'people', gdzie adres jest połączony do person kluczem PersonId. W ostatnim (czwartym) parametrze wskazujemy funkcję budującą wynikowy, anonimowy obiekt.
+
+Jeżeli dany obiekt nie będze mógł być połączony, to nie zostanie on uwzględniony w wyniku końcowym.
+
+Tę operację można porównać do operacji SQL INNER_JOIN.
+
+    var joinedData = people.Join(
+        addresses,
+        person => person.Id,
+        address => address.PersonId,
+        (person, address) => new { person.Name, address.Street, address.City }
+    );
+
+### GroupJoin
+
+Operator GroupJoin spowoduje połączenie danego elementu z kolekcją (w powyższym przykładzie - powiązanie osoby nie z adresem, ale z kolekcją adresów).
+
+    var joinedData = people.Join(
+        addresses,
+        person => person.Id,
+        address => address.PersonId,
+        (person, addresses) => new { person.Name, Addresses = addresses } // addresses zamiast address!
+    );
