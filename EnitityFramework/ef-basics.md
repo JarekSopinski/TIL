@@ -280,3 +280,30 @@ Jeżeli jednak chcemy zawrzeć np. jakąś własną właściwość dla tabeli ł
         }
 
     );
+
+## Dziedziczenie a EF
+
+### Table-per-hierarchy
+
+Domyślne zachowanie, które sprawi, że dla typu bazowego jak i dla typów pochodnych, będzie utworzona jedna duża tabela, zawierająca w sobie wszystkie właściwości tych typów.
+
+Wszystkie typy będą współdzielić klucz główny, a żeby odróżnić konkretny typ z tej wspólnej tabeli, EF utworzy kolumnę 'Discriminator', w której będzie przechowywać informację o typie danego rekordu.
+
+Jeżeli jakaś właściwość występuje w jednej z dziedziczonych klas, a nie występuje w innych, będzie musiała być nullowalna.
+
+Może być szybsze, ze względu na ograniczenie łączeń tabel, co potwierdziły testy Microsoftu.
+
+### Table-per-type
+
+Konfiguracja, która sprawi, że dla typu bazowego jak i dla typów pochodnych, zostaną utworzone osobne tabele w bazie danych.
+
+Dla klas pochodnych zostaną utworzone tabele zawierające TYLKO właściwości konkretnego typu pochodnego oraz referencje (klucz obcy) do tabeli bazowej, która równocześnie będzie kluczem głównym danej tabeli.
+
+Aby taką konfigurację utworzyć, potrzebne będzie jawne zdefiniowanie, do jakich tabel zmapować konkretne typy.
+
+Wymaga utworzenia dodatkowej konfiguracji, określającej na jakie tabele zostaną zmapowane typy pochodne:
+
+    modelBuilder.Entity<ChildA>().ToTable("ChildAs");
+    modelBuilder.Entity<ChildB>().ToTable("ChildBs");
+
+Może być wolniejsze, ze względu na to, że zapytania muszą łączyć wiele tabel.
