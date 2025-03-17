@@ -153,3 +153,130 @@ Jak również wartość ustawiane automatycznie przez bazę danych:
 
         entityBuilder.Property(x => x.CreatedDate).HasDefaultValueSql("getutcdate()");
         entityBuilder.Property(x => x.UpdatedDate).ValueGeneratedOnUpdate();
+
+## Konfiguracja relacji
+
+### Relacja 1 do 1
+
+    public class Address
+    {
+        public Guid Id { get; set; }
+        //...
+        public Guid UserId { get; set; }
+    }
+
+    public class User
+    {
+        public Guid Id { get; set; }
+        //...
+        public Address Address { get; set; }
+    }
+
+    modelBuilder.Entity<User>()
+        .HasOne(user => user.Address)
+        .WithOne(address => address.User)
+        .HasForeignKey<Address>(address => address.UserId);
+
+### Relacja 1 do wielu
+
+    public class WorkItem
+    {
+        public int Id { get; set; }
+        //...
+        public List<Comment> Comments { get; set; } = new List<Comment>();
+    }
+
+    public class Comment
+    {
+        public int Id { get; set; }
+        //...
+        public WorkItem WorkItem { get; set; }
+        public int WorkItemId { get; set; }
+
+    }
+
+    modelBuilder.Entity<WorkItem>(entityBuilder =>
+        {
+            entityBuilder
+                .HasMany(wi => wi.Comments)
+                .WithOne(comment => comment.WorkItem)
+                .HasForeignKey(comment => comment.WorkItemId);
+        });
+
+### Relacja wiele do wielu
+
+Starsze wersje wymagały utworzenia tabeli łączącej, przykładowo:
+
+    public class WorkItemTag
+    {
+        public WorkItem WorkItem { get; set; }
+        public int WorkItemId { get; set; }
+
+        public Tag Tag { get; set; }
+        public int TagId { get; set; }
+    }
+
+    modelBuilder.Entity<WorkItemTag>()
+        .HasKey(c => new { c.TagId, c.WorkItemId });
+
+W nowszych wersjach może to być uproszczone i tabelę łączącą można pominąć. Zostanie ona wówczas automatycznie utworzona 'pod spodem'.
+
+    public class WorkItem
+    {
+        public int Id { get; set; }
+        //...
+        public List<Tag> Tags { get; set; }
+    }
+
+    public class Tag
+    {
+        public int Id { get; set; }
+        //...
+        public List<WorkItem> WorkItems { get; set; }
+    }
+
+    modelBuilder.Entity<WorkItem>(entityBuilder =>
+    {
+        entityBuilder
+            .HasMany(wi => wi.Tags)
+            .WithMany(tag => tag.WorkItems);
+    });
+
+Jeżeli jednak chcemy zawrzeć np. jakąś własną właściwość dla tabeli łączącej (w przykładzie - data dołączenia taga do komentarza, PublicationDate) - możemy wciąż ręcznie utworzyć klasę takiej tabeli łączącej oraz skonfigurować ją w entity builderze:
+
+    public class WorkItemTag
+    {
+        public WorkItem WorkItem { get; set; }
+        public int WorkItemId { get; set; }
+
+        public Tag Tag { get; set; }
+        public int TagId { get; set; }
+
+        public DateTime PublicationDate { get; set; }
+    }
+
+    entityBuilder
+        .HasMany(wi => wi.Tags)
+        .WithMany(tag => tag.WorkItems)
+        .UsingEntity<WorkItemTag>(
+
+        // relation WorkItemTag -> Tag
+        wit => wit
+            .HasOne(wit => wit.Tag)
+            .WithMany()
+            .HasForeignKey(wit => wit.TagId),
+
+        // relation WorkItemTag -> WorkItem
+        wit => wit
+            .HasOne(wit => wit.WorkItem)
+            .WithMany()
+            .HasForeignKey(wit => wit.WorkItemId),
+
+        // WorkItemTag composite key
+        wit =>
+        {
+            wit.HasKey(x => new { x.TagId, x.WorkItemId });
+            wit.Property(x => x.PublicationDate).HasDefaultValue("getutcdate()");
+        }
+
+    );
