@@ -68,3 +68,89 @@ Aby cofnąć migrację, która została już zaaplikowana na bazie, możemy wyko
 
     update-database <Nazwa>
     remove-migration
+
+## Seedowanie
+
+Seedowanie jest procesem wypełniania bazy danych początkowym zestawem danych. Istnieje kilka sposobów osiągnięcia tego celu w EF Core:
+
+### Seedowanie za pomocą modelu seed data
+
+    modelBuilder.Entity<WorkItemState>()
+        .HasData(
+            new WorkItemState() { Id = 1, Value = "To Do" },
+            new WorkItemState() { Id = 2, Value = "Doing" },
+            new WorkItemState() { Id = 3, Value = "Done" }
+            );
+
+### Seedowanie poprzez ręczne dostosowanie migracji
+
+Powyższe podejście ma pewne ograniczenia, np. nie pozwala uwzględnić wartości automatycznie generowanych przez bazę danych. Alternatywnym podejściem jest wygenerowanie nowej (pustej?) migracji i ręczne wprowadzenie do niej danych.
+
+    public partial class AdditionWorkItemStateSeed : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.InsertData(
+                table: "WorkItemsStates",
+                column: "Value",
+                value: "On Hold"
+                );
+
+            migrationBuilder.InsertData(
+                table: "WorkItemsStates",
+                column: "Value",
+                value: "Rejected"
+                );
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DeleteData(
+                table: "WorkItemsStates",
+                keyColumn: "Value",
+                keyValue: "On Hold"
+                );
+
+            migrationBuilder.DeleteData(
+                table: "WorkItemsStates",
+                   keyColumn: "Value",
+                   keyValue: "Rejected"
+                );
+        }
+    }
+
+### Customowa logika seedowania
+
+Kolejny sposób to własna logika seedowania poprzez dependency injection. Przykładowo:
+
+    var users = dbContext.Users.ToList();
+    if (!users.Any())
+    {
+        var user1 = new User()
+        {
+            Email = "user1@test.com",
+            FullName = "User One",
+            Address = new Address()
+            {
+                City = "Warszawa",
+                Street = "Szeroka"
+            }
+        };
+
+        var user2 = new User()
+        {
+            Email = "user2@test.com",
+            FullName = "User Two",
+            Address = new Address()
+            {
+                City = "Gdańsk",
+                Street = "Długa"
+            }
+        };
+
+        dbContext.Users.AddRange(user1, user2);
+
+        dbContext.SaveChanges();
+    }
