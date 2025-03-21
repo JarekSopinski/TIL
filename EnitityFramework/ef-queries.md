@@ -229,3 +229,154 @@ Możemy też użyć metody ThenIclude, aby wyciągnąć dane z dalszej relacji (
 
         return user;
     });
+
+## Usuwanie danych
+
+Metoda Remove usuwa jeden element, metoda RemoveRange usuwa listę.
+
+Przykładowe usuwanie dla powiązanych encji, które mają w pełni ustawione kaskadowe usuwanie.
+
+    app.MapDelete("DeleteWorkItemTags", async (MyBoardsContext db) =>
+    {
+        var workItemTags = await db.WorkItemTag
+            .Where(wit => wit.WorkItemId == 12)
+            .ToListAsync();
+        db.WorkItemTag.RemoveRange(workItemTags);
+
+        var workItem = await db.WorkItems.FirstAsync(wi => wi.Id == 16);
+        db.RemoveRange(workItem);
+
+        await db.SaveChangesAsync();
+    });
+
+W przypadku, gdy mamy powiązane encje bez kaskadowego usuwania, musimy najpierw wyczyścić zależności. W poniższym przykładzie chcemy usunąć użytkownika, ale najpierw musimy wyczyścić wszystkie jego komentarze.
+
+    app.MapDelete("DeleteUser", async (MyBoardsContext db) =>
+    {
+        var user = await db.Users
+            .FirstAsync(u => u.Id == Guid.Parse("D5B87CCD-A9F2-4744-CBDF-08DA10AB0E61"));
+
+        var userComments = db.Comments
+            .Where(c => c.AuthorId == user.Id)
+            .ToList();
+        db.RemoveRange(userComments);
+        await db.SaveChangesAsync(); // make sure comments get deleted before deleting user!
+
+        db.Users.Remove(user);
+        await db.SaveChangesAsync();
+    });
+
+Zamiast ręcznego usuwania wszystkich powiązanych relacji (jak w powyższym przykładzie) możemy też zautomatyzować ten proces. W builderze należy ustawić wartość OnDelete(DeleteBehavior.ClientCascade), która sprawi, że kaskadowe usuwanie zostanie zastosowane po stronie EF, ale nie będzie narzucone bezpośrednio na bazę i nie spowoduje tam błędu. Poza tym należy w endpoincie zastosować Include do powiązanych usuwanych danych.
+
+Ustawienie DeleteBehavior.ClientCascade nie wymaga migracji, gdyż nie zmienia schematu bazy danych, jest to wyłącznie zachowanie po stronie EF.
+
+    modelBuilder.Entity<Comment>(entityBuilder =>
+    {
+        entityBuilder.Property(x => x.CreatedDate).HasDefaultValueSql("getutcdate()");
+        entityBuilder.Property(x => x.UpdatedDate).ValueGeneratedOnUpdate();
+        entityBuilder
+            .HasOne(c => c.Author)
+            .WithMany(a => a.Comments)
+            .HasForeignKey(c => c.AuthorId)
+            .OnDelete(DeleteBehavior.ClientCascade); // kaskadowe usunięcie komentarzy użytkownika po stronie EF
+    });
+
+    app.MapDelete("DeleteUserClientCascade", async (MyBoardsContext db) =>
+    {
+        var user = await db.Users
+            .Include(u => u.Comments) // dołączenie usunięcia komentarzy przy usuwaniu użytkownika
+            .FirstAsync(u => u.Id == Guid.Parse("68366DBE-0809-490F-CC1D-08DA10AB0E61"));
+
+        db.Users.Remove(user);
+        await db.SaveChangesAsync();
+    });
+
+## Change Tracker
+
+Wszystkie dane pobierane z db contextu są przez niego śledzone pod kątem wykrycia zmian usunięcia lub dodania konkretnej encji. Za ten mechanizm odpowiedzialny jest Change Tracker w ramach db contextu. Podczas danej operacji będzie on przechowywał:
+- Original Value
+- Value
+- State (czy zostało zmienione) (Unchanged -> -, Modified -> UPDATE, Deleted -> DELETE, Added -> INSERT)
+
+Zapytania mogą być również wykonywane bez żadnego śledzenia, do czego służy metoda AsNoTracking(). Można ją dodać gdy wiemy, że nie zamierzamy wprowadzić żadnych zmian.
+
+    var user = await db.Users
+        .AsNoTracking()
+        .FirstAsync(u => u.Id == userId);
+
+Stan CT można śledzić poprzez:
+
+    db.ChangeTracker.Entries();
+
+CT może być użyty np. do optymalizacji procesu usuwania - można za jego pomocą wykonać usuwanie bez konieczności wcześniejszego wykonywania selecta. Możemy w endpoincie 'utworzyć' reprezentację encji o id, które chcemy usunąć, a potem dodać ją do change trackera i zmienić jego state.
+
+    app.MapDelete("DeleteWorkItemTracked", async (MyBoardsContext db) =>
+    {
+        var workItem = new Epic()
+        {
+            Id = 2
+        };
+
+        var entry = db.Attach(workItem);
+        entry.State = EntityState.Deleted;
+
+        db.SaveChanges();
+    });
+
+
+## Benchmark
+
+Paczka która może być użyta do wygodnego mierzenia i porównywania wydajności endpointów.
+
+Do testów wydajnościowych można utworzyć dodatkowy konsolowy projekt w tej samej solucji. Projekt ten musi być uruchamiany w trybie Release!
+
+Tworzymy przykładową klasę z testami:
+
+    using Microsoft.EntityFrameworkCore;
+    using MyBoards.Entities;
+    using BenchmarkDotNet.Attributes;
+
+    namespace MyBoards.Benchmark
+    {
+        [MemoryDiagnoser]
+        public class TrackingBenchmark
+        {
+            [Benchmark]
+            public int WithTracking()
+            {
+                var optionsBuilder = new DbContextOptionsBuilder<MyBoardsContext>()
+                    .UseSqlServer("Server=(LocalDb)\\MSSQLLocalDb;Database=MyBoardsDb;Trusted_Connection=True;");
+
+                var _dbContext = new MyBoardsContext(optionsBuilder.Options);
+
+                var comments = _dbContext.Comments
+                    .ToList();
+
+                return comments.Count;
+            }
+
+            [Benchmark]
+            public int WithNoTracking()
+            {
+                var optionsBuilder = new DbContextOptionsBuilder<MyBoardsContext>()
+                    .UseSqlServer("Server=(LocalDb)\\MSSQLLocalDb;Database=MyBoardsDb;Trusted_Connection=True;");
+
+                var _dbContext = new MyBoardsContext(optionsBuilder.Options);
+
+                var comments = _dbContext.Comments
+                    .AsNoTracking()
+                    .ToList();
+
+                return comments.Count;
+            }
+        }
+    }
+
+W Program.cs:
+
+    using BenchmarkDotNet.Running;
+    using MyBoards.Benchmark;
+
+    BenchmarkRunner.Run<TrackingBenchmark>();
+
+Po uruchomieniu projektu (konsolowego, nie głównego!) w trybie bez debugowania, zostaną automatycznie wykonane testy i wyniki podsumowane w konsoli.
