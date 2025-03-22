@@ -177,3 +177,42 @@ Po przeprowadzeniu refaktora można puścić testową migrację i sprawdzić, cz
 ## Scaffold istniejącej bazy
 
     Scaffold-DbContext "Name=ConnectionStrings:ScaffoldTestConnectionString" Microsoft.EntityFrameworkCore.SqlServer -OutputDir  Entities
+
+## Generacja danych dla seeda - Bogus
+
+    using Bogus;
+    using MyBoards.Entities;
+
+    namespace MyBoards
+    {
+        public class DataGenerator
+        {
+            public static void Seed(MyBoardsContext context)
+            {
+                var locale = "pl";
+
+                Randomizer.Seed = new Random(911); // hardcoded int will cause to generate always the   same data
+
+                var addressGenerator = new Faker<Address>(locale)
+                    //.StrictMode(true) // will force to populate all fields
+                    .RuleFor(a => a.City, f => f.Address.City())
+                    .RuleFor(a => a.Country, f => f.Address.Country())
+                    .RuleFor(a => a.PostalCode, f => f.Address.ZipCode())
+                    .RuleFor(a => a.Street, f => f.Address.StreetName());
+
+                var userGenerator = new Faker<User>()
+                    .RuleFor(u => u.Email, f => f.Person.Email)
+                    .RuleFor(u => u.FullName, f => f.Person.FullName)
+                    .RuleFor(u => u.Address, f => addressGenerator.Generate());
+
+                var users = userGenerator.Generate(100);
+
+                context.AddRange(users);
+                context.SaveChanges();
+            }
+        }
+    }
+
+Program.cs:
+
+    DataGenerator.Seed(dbContext);
